@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crx4nhxe8qcbu" path="res://scenes/levels/Level1.jpg" id="1_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="2_x4si1"]
-[ext_resource type="PackedScene" path="res://scenes/levels/level_1_walls.tscn" id="3_fh0io"]
+[ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level_1_walls.tscn" id="3_fh0io"]
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_fh0io"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fh0io"]
@@ -45,12 +45,6 @@ point_count = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1361002411]
 texture = ExtResource("1_j08sa")
-
-[node name="Player" parent="." unique_id=1694873845 instance=ExtResource("2_x4si1")]
-position = Vector2(210, 331)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
-zoom = Vector2(0.5, 0.5)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=551744483]
 visible = false
@@ -109,5 +103,11 @@ path = NodePath("../pp5")
 
 [node name="pp5" type="Path2D" parent="Enemies/enemy5" unique_id=2070606724]
 curve = SubResource("Curve2D_brv20")
+
+[node name="Player" parent="." unique_id=1694873845 instance=ExtResource("2_x4si1")]
+position = Vector2(210, 331)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
+zoom = Vector2(0.5, 0.5)
 
 [editable path="NavigationRegion2D/Level1 Walls"]

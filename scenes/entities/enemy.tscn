@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://c5d7e1fvayvqn"]
 
 [ext_resource type="Script" uid="uid://ctrsybtk2gkpi" path="res://scenes/entities/enemy.gd" id="1_defa4"]
-[ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/ChickenSprite.tscn" id="2_ktqfp"]
+[ext_resource type="PackedScene" uid="uid://c00754xjrrsn4" path="res://tech-art/CharacterSprite/ChickenSprite.tscn" id="2_ktqfp"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="3_defa4"]
-[ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/RoosterSprite.tscn" id="3_jr1g6"]
+[ext_resource type="PackedScene" uid="uid://cijc780e8ap12" path="res://tech-art/CharacterSprite/RoosterSprite.tscn" id="3_jr1g6"]
+[ext_resource type="Texture2D" uid="uid://c2fuyvr7jxoq4" path="res://tech-art/feather-trail/feather.png" id="5_jr1g6"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1609991990]
 script = ExtResource("1_defa4")
@@ -11,6 +12,14 @@ metadata/_custom_type_script = "uid://bvi0kr20kpjhg"
 
 [node name="agent" type="NavigationAgent2D" parent="." unique_id=1668224642]
 unique_name_in_owner = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1101788818]
+amount = 10
+texture = ExtResource("5_jr1g6")
+lifetime = 15.0
+randomness = 1.0
+gravity = Vector2(0, 0)
+angle_max = 360.0
 
 [node name="chickenSprite" parent="." unique_id=413407172 instance=ExtResource("2_ktqfp")]
 unique_name_in_owner = true
