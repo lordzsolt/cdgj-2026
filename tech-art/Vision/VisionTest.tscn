@@ -21,18 +21,36 @@ shader_parameter/vision_texture = SubResource("ViewportTexture_xiha2")
 [sub_resource type="ViewportTexture" id="ViewportTexture_q17aj"]
 viewport_path = NodePath("Vision viewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_mjvtq"]
+viewport_path = NodePath("Vision viewport")
+
 [node name="VisionTest" type="Node2D" unique_id=1812244]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622396882]
+visible = false
 material = SubResource("ShaderMaterial_07mg8")
 texture = SubResource("ViewportTexture_q17aj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1984566808]
+visible = false
 
-[node name="VisionSync" type="Node" parent="." unique_id=268826139 node_paths=PackedStringArray("player_level", "player_view")]
+[node name="VisionSync" type="Node" parent="." unique_id=268826139 node_paths=PackedStringArray("level_camera", "view_camera", "level_viewport", "view_viewport", "player_level", "player_view")]
 script = ExtResource("2_07mg8")
+level_camera = NodePath("../Scene viewport/Level1/Player/Camera2D")
+view_camera = NodePath("../Vision viewport/Vision/Camera2D")
+level_viewport = NodePath("../Scene viewport")
+view_viewport = NodePath("../Vision viewport")
 player_level = NodePath("../Scene viewport/Level1/Player")
 player_view = NodePath("../Vision viewport/Vision")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=495955885]
+visible = false
+material = SubResource("ShaderMaterial_07mg8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Vision viewport" type="SubViewport" parent="." unique_id=1269793411]
 
@@ -72,6 +90,14 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Player" parent="Scene viewport/Level1" index="1" unique_id=1694873845]
 position = Vector2(887, 655)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=342990256]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_mjvtq")
 
 [editable path="Vision viewport/Vision/VisionCone2D"]
 [editable path="Vision viewport/Vision/VisionCone2D2"]

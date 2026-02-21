@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CDGJ-2026"
-run/main_scene="uid://i2du4wt0hkkh"
+run/main_scene="uid://cgswsxx1xcyx3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -84,3 +84,5 @@ run={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+viewport/transparent_background=true
