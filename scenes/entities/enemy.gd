@@ -10,6 +10,7 @@ enum { PATROL, CHASE, RETURN }
 @export var patrol_arrive_dist := 12.0
 
 @onready var agent: NavigationAgent2D = %agent
+@onready var main_character_sprite: AnimatedSprite2D = %MainCharacterSprite
 
 var state := PATROL
 var patrol_points: PackedVector2Array
@@ -28,6 +29,7 @@ func _physics_process(delta):
 
 	match state:
 		PATROL:
+			main_character_sprite.play("walk")
 			if global_position.distance_to(agent.target_position) <= patrol_arrive_dist:
 				patrol_index = (patrol_index + 1) % patrol_points.size()
 				_set_patrol_target()
@@ -35,6 +37,7 @@ func _physics_process(delta):
 
 		CHASE:
 			assert(player != null)
+			main_character_sprite.play("run")
 			agent.target_position = player.global_position
 			_follow_agent(speed * 1.15)
 
@@ -49,6 +52,7 @@ func _update_state():
 		PATROL:
 			if player != null:
 				state = CHASE
+
 
 		CHASE:
 			if player == null:

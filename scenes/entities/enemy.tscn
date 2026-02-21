@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5d7e1fvayvqn"]
 
-[ext_resource type="Texture2D" uid="uid://8xiomdkmn8y7" path="res://icon.svg" id="1_d7j71"]
 [ext_resource type="Script" uid="uid://ctrsybtk2gkpi" path="res://scenes/entities/enemy.gd" id="1_defa4"]
+[ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/ChickenSprite.tscn" id="2_ktqfp"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="3_defa4"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1609991990]
@@ -11,19 +11,18 @@ metadata/_custom_type_script = "uid://bvi0kr20kpjhg"
 [node name="agent" type="NavigationAgent2D" parent="." unique_id=1668224642]
 unique_name_in_owner = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=913165925]
-rotation = 0.012914411
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_d7j71")
+[node name="MainCharacterSprite" parent="." unique_id=413407172 instance=ExtResource("2_ktqfp")]
+unique_name_in_owner = true
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
 
-[node name="VisionCone2D" parent="Sprite2D" unique_id=665888346 instance=ExtResource("3_defa4")]
+[node name="VisionCone2D" parent="." unique_id=665888346 instance=ExtResource("3_defa4")]
 rotation = -1.5707964
-scale = Vector2(2, 2)
 angle_deg = 60
 ray_count = 45
 max_distance = 200.0
 
-[connection signal="body_entered" from="Sprite2D/VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
-[connection signal="body_exited" from="Sprite2D/VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
+[connection signal="body_entered" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
+[connection signal="body_exited" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
 
-[editable path="Sprite2D/VisionCone2D"]
+[editable path="VisionCone2D"]
