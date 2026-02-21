@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crx4nhxe8qcbu" path="res://scenes/levels/Level1.jpg" id="1_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="2_x4si1"]
-[ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level_1_walls.tscn" id="3_fh0io"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_1_walls.tscn" id="3_fh0io"]
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_fh0io"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fh0io"]
@@ -22,6 +22,18 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 215, -74, 0, 0, 0, 0, 366, -72, 0, 0, 0, 0, 570, 111, 0, 0, 0, 0, 755, 266, 0, 0, 0, 0, 910, 284, 0, 0, 0, 0, 1025, 140, 0, 0, 0, 0, 995, 49, 0, 0, 0, 0, 897, -18, 0, 0, 0, 0, 663, -18, 0, 0, 0, 0, 557, 110, 0, 0, 0, 0, 448, 265, 0, 0, 0, 0, 374, 286, 0, 0, 0, 0, 241, 292, 0, 0, 0, 0, 137, 237, 0, 0, 0, 0, 24, 82, 0, 0, 0, 0, 3, -33, 0, 0, 0, 0, 215, -74)
 }
 point_count = 17
+
+[sub_resource type="Curve2D" id="Curve2D_76cw8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 399, -414, 0, 0, 0, 0, 723, -416, 0, 0, 0, 0, 1060, -424, 0, 0, 0, 0, 1140, -416, 0, 0, 0, 0, 1155, -55, 0, 0, 0, 0, 1009, -49, 0, 0, 0, 0, 1022, -392, 0, 0, 0, 0, 775, -399, 0, 0, 0, 0, 394, -387, 0, 0, 0, 0, 399, -414)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_m00rq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, 254, 0, 0, 0, 0, 610, 256, 0, 0, 0, 0, 619, 143, 0, 0, 0, 0, 837, 140, 0, 0, 0, 0, 831, -211, 0, 0, 0, 0, 636, -201, 0, 0, 0, 0, 639, -5, 0, 0, 0, 0, 316, -9, 0, 0, 0, 0, -4, -13, 0, 0, 0, 0, 2, 254)
+}
+point_count = 10
 
 [node name="Level1" type="Node2D" unique_id=1626283689]
 
@@ -60,5 +72,25 @@ path = NodePath("../pp2")
 
 [node name="pp2" type="Path2D" parent="Enemies/enemy2" unique_id=932144954]
 curve = SubResource("Curve2D_68ib6")
+
+[node name="enemy3" type="Node2D" parent="Enemies" unique_id=841760541]
+position = Vector2(-1354, 99)
+
+[node name="e3" parent="Enemies/enemy3" unique_id=1314729488 node_paths=PackedStringArray("path") instance=ExtResource("4_fh0io")]
+position = Vector2(395, -415)
+path = NodePath("../pp3")
+
+[node name="pp3" type="Path2D" parent="Enemies/enemy3" unique_id=723069944]
+curve = SubResource("Curve2D_76cw8")
+
+[node name="enemy4" type="Node2D" parent="Enemies" unique_id=1230916982]
+position = Vector2(-280, -198)
+
+[node name="e4" parent="Enemies/enemy4" unique_id=1799780883 node_paths=PackedStringArray("path") instance=ExtResource("4_fh0io")]
+position = Vector2(4, -32)
+path = NodePath("../pp4")
+
+[node name="pp4" type="Path2D" parent="Enemies/enemy4" unique_id=1650059935]
+curve = SubResource("Curve2D_m00rq")
 
 [editable path="NavigationRegion2D/Level1 Walls"]

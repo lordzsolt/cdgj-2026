@@ -39,7 +39,7 @@ func _physics_process(delta):
 			assert(player != null)
 			main_character_sprite.play("run")
 			agent.target_position = player.global_position
-			_follow_agent(speed * 1.15)
+			_follow_agent(speed * 1.5)
 
 		RETURN:
 			_follow_agent(speed)
