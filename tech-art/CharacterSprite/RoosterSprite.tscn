@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cijc780e8ap12"]
+
+[ext_resource type="Texture2D" uid="uid://bv82rarxr1shs" path="res://art/ChickenSpritesFINAL.png" id="1_bncbf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bncbf"]
+atlas = ExtResource("1_bncbf")
+region = Rect2(1908, 1000, 954, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k256t"]
+atlas = ExtResource("1_bncbf")
+region = Rect2(2862, 1000, 954, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbi0n"]
+atlas = ExtResource("1_bncbf")
+region = Rect2(0, 2400, 954, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkbu5"]
+atlas = ExtResource("1_bncbf")
+region = Rect2(954, 2400, 954, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkjk4"]
+atlas = ExtResource("1_bncbf")
+region = Rect2(1908, 2400, 954, 1400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vb0c"]
+atlas = ExtResource("1_bncbf")
+region = Rect2(2862, 2400, 954, 1400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7614"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bncbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k256t")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbi0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkbu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkjk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vb0c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="MainCharacterSprite" type="AnimatedSprite2D" unique_id=413407172]
+sprite_frames = SubResource("SpriteFrames_h7614")
+animation = &"walk"
