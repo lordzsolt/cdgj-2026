@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cgswsxx1xcyx3"]
+
+[ext_resource type="PackedScene" uid="uid://djnol0msssw3i" path="res://tech-art/Vision/vision.tscn" id="2_07mg8"]
+[ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://tech-art/Vision/VisionTest.gdshader" id="2_q17aj"]
+[ext_resource type="PackedScene" uid="uid://cllj0xndtxh5r" path="res://tech-art/Vision/scene.tscn" id="2_xiha2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_07mg8"]
+viewport_path = NodePath("Scene viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xiha2"]
+viewport_path = NodePath("Vision viewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07mg8"]
+resource_local_to_scene = true
+shader = ExtResource("2_q17aj")
+shader_parameter/screen_texture = SubResource("ViewportTexture_07mg8")
+shader_parameter/vision_texture = SubResource("ViewportTexture_xiha2")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_q17aj"]
+viewport_path = NodePath("Vision viewport")
+
+[node name="VisionTest" type="Node2D" unique_id=1812244]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1622396882]
+material = SubResource("ShaderMaterial_07mg8")
+texture = SubResource("ViewportTexture_q17aj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1984566808]
+
+[node name="Vision viewport" type="SubViewport" parent="." unique_id=1269793411]
+
+[node name="Vision" parent="Vision viewport" unique_id=1371682739 instance=ExtResource("2_07mg8")]
+
+[node name="Scene viewport" type="SubViewport" parent="." unique_id=1695732986]
+
+[node name="Scene" parent="Scene viewport" unique_id=1022955481 instance=ExtResource("2_xiha2")]

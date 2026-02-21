@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://djnol0msssw3i"]
+
+[ext_resource type="Texture2D" uid="uid://cpe1xl3nv7lo" path="res://tech-art/Vision/ViewConeSample.png" id="1_2hv18"]
+
+[node name="Vision" type="Node2D" unique_id=1371682739]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1527648614]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1199241437]
+texture = ExtResource("1_2hv18")
