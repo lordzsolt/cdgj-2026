@@ -19,10 +19,16 @@ extends CharacterBody2D
 func _on_vision_cone_area_body_entered(body: Node2D) -> void:
 	# print("%s is seeing %s" % [self, body])
 	vision_renderer.color = alert_color
+	var player := body as player_movement
+	if player:
+		player.seen()
 
 func _on_vision_cone_area_body_exited(body: Node2D) -> void:
 	# print("%s stopped seeing %s" % [self, body])
 	vision_renderer.color = original_color
+	var player := body as player_movement
+	if player:
+		player.unseen()
 
 func _physics_process(delta: float) -> void:
 	if is_rotating:

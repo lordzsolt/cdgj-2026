@@ -94,10 +94,11 @@ offset_right = 2460.0
 offset_bottom = 52.0
 text = "Notice that since this cone is not visualized by the player, the minimum_recalculate_time_msec can be set to a higher value to improve performance, since this can be slightly more approximate than a cone that is visible"
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1313069502]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1313069502 node_paths=PackedStringArray("feathers")]
 position = Vector2(600, 404)
 script = ExtResource("2_eyj34")
 distance = 500.0
+feathers = NodePath("CharacterRenderer/CPUParticles2D")
 
 [node name="CharacterRenderer" type="Polygon2D" parent="Player" unique_id=615636876]
 scale = Vector2(2, 2)
@@ -107,8 +108,9 @@ polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Player/CharacterRenderer" unique_id=104783251]
 position = Vector2(-1, 1.5)
 emitting = false
+amount = 100
 texture = ExtResource("3_qhmi5")
-one_shot = true
+lifetime = 8.0
 randomness = 1.0
 gravity = Vector2(0, 0)
 angle_max = 360.0
