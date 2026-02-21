@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cpkstcf6exa0s"]
+
+[ext_resource type="Script" uid="uid://lkf4qlxelv8c" path="res://scenes/characters/player.gd" id="1_yewv4"]
+[ext_resource type="PackedScene" uid="uid://b3q6efb2elbi3" path="res://tech-art/CharacterSprite/MainCharacterSprite.tscn" id="2_76oj4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yewv4"]
+height = 98.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1694873845]
+script = ExtResource("1_yewv4")
+
+[node name="MainCharacterSprite" parent="." unique_id=413407172 instance=ExtResource("2_76oj4")]
+scale = Vector2(0.060465116, 0.06046511)
+frame = 3
+frame_progress = 0.6726583
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384011758]
+shape = SubResource("CapsuleShape2D_yewv4")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bemds8low6c65"]
+
+[ext_resource type="Texture2D" uid="uid://8xiomdkmn8y7" path="res://icon.svg" id="1_shhkc"]
+[ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="2_8jv52"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1a80"]
+cull_mode = 2
+albedo_texture = ExtResource("1_shhkc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kd2xv"]
+material = SubResource("StandardMaterial3D_q1a80")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1a80"]
+
+[node name="Game" type="Node2D" unique_id=344146896]
+
+[node name="coin" type="MeshInstance2D" parent="." unique_id=1598499023]
+unique_name_in_owner = true
+rotation = 3.1415927
+scale = Vector2(0.9214908, -1)
+mesh = SubResource("QuadMesh_kd2xv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2062381288]
+position = Vector2(104, 93)
+zoom = Vector2(2, 2)
+
+[node name="Player" parent="." unique_id=1694873845 instance=ExtResource("2_8jv52")]
+position = Vector2(104, 93)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=2041020064]
+remote_path = NodePath("../../Camera2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=896645273]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1272526979]
+position = Vector2(185, 99)
+shape = SubResource("CircleShape2D_q1a80")
