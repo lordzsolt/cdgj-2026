@@ -3,14 +3,20 @@ extends CharacterBody2D
 
 enum { PATROL, CHASE, RETURN }
 
+enum Type { CHICKEN, ROOSTER }
+
+@export var type: Type
 @export var speed := 100
+@export var chase_speed_multiplier = 1.5
 @export var aggro_range := 250.0
 @export var lose_range := 320.0
 @export var path: Path2D
 @export var patrol_arrive_dist := 12.0
 
 @onready var agent: NavigationAgent2D = %agent
-@onready var main_character_sprite: AnimatedSprite2D = %MainCharacterSprite
+@onready var main_character_sprite: AnimatedSprite2D
+@onready var rooster_sprite: AnimatedSprite2D = %roosterSprite
+@onready var chicken_sprite: AnimatedSprite2D = %chickenSprite
 
 var state := PATROL
 var patrol_points: PackedVector2Array
@@ -23,6 +29,17 @@ func _ready():
 	agent.path_desired_distance = 6.0
 	agent.target_desired_distance = 8.0
 	_set_patrol_target()
+
+	if type == Type.CHICKEN:
+		main_character_sprite = chicken_sprite
+		rooster_sprite.visible = false
+		speed = 100
+	else:
+		main_character_sprite = rooster_sprite
+		chicken_sprite.visible = false
+		speed = 150
+	main_character_sprite.visible = true
+
 
 func _physics_process(delta):
 	_update_state()
@@ -39,7 +56,7 @@ func _physics_process(delta):
 			assert(player != null)
 			main_character_sprite.play("run")
 			agent.target_position = player.global_position
-			_follow_agent(speed * 1.5)
+			_follow_agent(speed * chase_speed_multiplier)
 
 		RETURN:
 			_follow_agent(speed)

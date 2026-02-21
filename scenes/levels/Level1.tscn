@@ -31,9 +31,9 @@ point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_m00rq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, 254, 0, 0, 0, 0, 610, 256, 0, 0, 0, 0, 619, 143, 0, 0, 0, 0, 837, 140, 0, 0, 0, 0, 831, -211, 0, 0, 0, 0, 636, -201, 0, 0, 0, 0, 639, -5, 0, 0, 0, 0, 316, -9, 0, 0, 0, 0, -4, -13, 0, 0, 0, 0, 2, 254)
+"points": PackedVector2Array(0, 0, 0, 0, -7, 267, 0, 0, 0, 0, 596, 267, 0, 0, 0, 0, 598, 143, 0, 0, 0, 0, 879, 139, 0, 0, 0, 0, 865, 41, 0, 0, 0, 0, 1084, 41, 0, 0, 0, 0, 1080, -163, 0, 0, 0, 0, 840, -167, 0, 0, 0, 0, 639, -170, 0, 0, 0, 0, 634, 4, 0, 0, 0, 0, 145, -1, 0, 0, 0, 0, -8, 1, 0, 0, 0, 0, -7, 267)
 }
-point_count = 10
+point_count = 13
 
 [sub_resource type="Curve2D" id="Curve2D_brv20"]
 _data = {
@@ -64,6 +64,7 @@ navigation_polygon = SubResource("NavigationPolygon_fh0io")
 
 [node name="e1" parent="Enemies/enemy1" unique_id=1609991990 node_paths=PackedStringArray("path") instance=ExtResource("4_fh0io")]
 position = Vector2(488, -417)
+type = 1
 path = NodePath("../pp1")
 
 [node name="pp1" type="Path2D" parent="Enemies/enemy1" unique_id=448113827]

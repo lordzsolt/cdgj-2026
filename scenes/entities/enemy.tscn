@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ctrsybtk2gkpi" path="res://scenes/entities/enemy.gd" id="1_defa4"]
 [ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/ChickenSprite.tscn" id="2_ktqfp"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="3_defa4"]
+[ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/RoosterSprite.tscn" id="3_jr1g6"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1609991990]
 script = ExtResource("1_defa4")
@@ -11,7 +12,12 @@ metadata/_custom_type_script = "uid://bvi0kr20kpjhg"
 [node name="agent" type="NavigationAgent2D" parent="." unique_id=1668224642]
 unique_name_in_owner = true
 
-[node name="MainCharacterSprite" parent="." unique_id=413407172 instance=ExtResource("2_ktqfp")]
+[node name="chickenSprite" parent="." unique_id=413407172 instance=ExtResource("2_ktqfp")]
+unique_name_in_owner = true
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+
+[node name="roosterSprite" parent="." unique_id=1415549255 instance=ExtResource("3_jr1g6")]
 unique_name_in_owner = true
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
