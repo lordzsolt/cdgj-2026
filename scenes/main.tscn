@@ -9,7 +9,7 @@ script = ExtResource("1_sugp2")
 [node name="root" type="Node" parent="." unique_id=1124400026]
 unique_name_in_owner = true
 
-[node name="game_ui" type="Node" parent="." unique_id=885745875]
+[node name="game_ui" type="CanvasLayer" parent="." unique_id=645276641]
 unique_name_in_owner = true
 
 [node name="Overlay" type="CanvasLayer" parent="." unique_id=749708516]
