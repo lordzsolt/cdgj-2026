@@ -35,6 +35,12 @@ _data = {
 }
 point_count = 10
 
+[sub_resource type="Curve2D" id="Curve2D_brv20"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 52, -32, 0, 0, 0, 0, 314, -23, 0, 0, 0, 0, 312, 232, 0, 0, 0, 0, 418, 236, 0, 0, 0, 0, 418, 443, 0, 0, 0, 0, 85, 441, 0, 0, 0, 0, -158, 443, 0, 0, 0, 0, -158, 260, 0, 0, 0, 0, 8, 250, 0, 0, 0, 0, 4, 22, 0, 0, 0, 0, 3, -31, 0, 0, 0, 0, 52, -32)
+}
+point_count = 12
+
 [node name="Level1" type="Node2D" unique_id=1626283689]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1361002411]
@@ -92,5 +98,15 @@ path = NodePath("../pp4")
 
 [node name="pp4" type="Path2D" parent="Enemies/enemy4" unique_id=1650059935]
 curve = SubResource("Curve2D_m00rq")
+
+[node name="enemy5" type="Node2D" parent="Enemies" unique_id=1358434587]
+position = Vector2(-59, -635)
+
+[node name="e5" parent="Enemies/enemy5" unique_id=426028706 node_paths=PackedStringArray("path") instance=ExtResource("4_fh0io")]
+position = Vector2(4, -32)
+path = NodePath("../pp5")
+
+[node name="pp5" type="Path2D" parent="Enemies/enemy5" unique_id=2070606724]
+curve = SubResource("Curve2D_brv20")
 
 [editable path="NavigationRegion2D/Level1 Walls"]
