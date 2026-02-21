@@ -15,7 +15,7 @@ var state := PATROL
 var patrol_points: PackedVector2Array
 var patrol_index := 0
 
-@onready var player: CharacterBody2D = null
+@onready var player: Player = null
 
 func _ready():
 	patrol_points = _get_patrol_points_world()
@@ -105,3 +105,13 @@ func _closest_point_on_segment(p: Vector2, a: Vector2, b: Vector2) -> Vector2:
 		t = (p - a).dot(ab) / denom
 	t = clamp(t, 0.0, 1.0)
 	return a + ab * t
+
+
+func _on_vision_cone_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		player = body
+
+
+func _on_vision_cone_area_body_exited(body: Node2D) -> void:
+	if body is Player:
+		player = null

@@ -23,4 +23,7 @@ angle_deg = 60
 ray_count = 45
 max_distance = 200.0
 
+[connection signal="body_entered" from="Sprite2D/VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
+[connection signal="body_exited" from="Sprite2D/VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
+
 [editable path="Sprite2D/VisionCone2D"]
