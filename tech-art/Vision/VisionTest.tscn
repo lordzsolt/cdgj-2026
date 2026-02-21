@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cgswsxx1xcyx3"]
 
-[ext_resource type="PackedScene" uid="uid://djnol0msssw3i" path="res://tech-art/Vision/vision.tscn" id="2_07mg8"]
+[ext_resource type="Script" uid="uid://bvboknb7ylm4h" path="res://tech-art/Vision/VisionSync.gd" id="2_07mg8"]
+[ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="2_mjvtq"]
 [ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://tech-art/Vision/VisionTest.gdshader" id="2_q17aj"]
-[ext_resource type="PackedScene" uid="uid://cllj0xndtxh5r" path="res://tech-art/Vision/scene.tscn" id="2_xiha2"]
+[ext_resource type="PackedScene" uid="uid://d4ef0p7fvb87p" path="res://scenes/levels/Level1.tscn" id="3_q17aj"]
+[ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level_1_walls.tscn" id="4_mjvtq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_07mg8"]
 viewport_path = NodePath("Scene viewport")
@@ -27,10 +29,52 @@ texture = SubResource("ViewportTexture_q17aj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1984566808]
 
+[node name="VisionSync" type="Node" parent="." unique_id=268826139 node_paths=PackedStringArray("player_level", "player_view")]
+script = ExtResource("2_07mg8")
+player_level = NodePath("../Scene viewport/Level1/Player")
+player_view = NodePath("../Vision viewport/Vision")
+
 [node name="Vision viewport" type="SubViewport" parent="." unique_id=1269793411]
 
-[node name="Vision" parent="Vision viewport" unique_id=1371682739 instance=ExtResource("2_07mg8")]
+[node name="Vision" type="Node2D" parent="Vision viewport" unique_id=635430032]
+scale = Vector2(33.076927, 33.076923)
+
+[node name="VisionCone2D" parent="Vision viewport/Vision" unique_id=461109295 instance=ExtResource("2_mjvtq")]
+position = Vector2(0, -20)
+rotation = 3.1415927
+scale = Vector2(1, 0.9999998)
+angle_deg = 70
+ray_count = 80
+max_distance = 400.0
+
+[node name="VisionConeRenderer" parent="Vision viewport/Vision/VisionCone2D" index="0"]
+color = Color(0.9647059, 1, 1, 1)
+
+[node name="VisionCone2D2" parent="Vision viewport/Vision" unique_id=1303112355 instance=ExtResource("2_mjvtq")]
+position = Vector2(0, -20)
+rotation = 3.1415927
+scale = Vector2(1, 0.9999998)
+ray_count = 45
+max_distance = 150.0
+
+[node name="VisionConeRenderer" parent="Vision viewport/Vision/VisionCone2D2" index="0"]
+color = Color(0.9647059, 1, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Vision viewport/Vision" unique_id=1206366586]
+scale = Vector2(1, 0.9999997)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Level1 Walls" parent="Vision viewport" unique_id=2108918902 instance=ExtResource("4_mjvtq")]
 
 [node name="Scene viewport" type="SubViewport" parent="." unique_id=1695732986]
 
-[node name="Scene" parent="Scene viewport" unique_id=1022955481 instance=ExtResource("2_xiha2")]
+[node name="Level1" parent="Scene viewport" unique_id=1626283689 instance=ExtResource("3_q17aj")]
+
+[node name="Player" parent="Scene viewport/Level1" index="1" unique_id=1694873845]
+position = Vector2(887, 655)
+
+[editable path="Vision viewport/Vision/VisionCone2D"]
+[editable path="Vision viewport/Vision/VisionCone2D2"]
+[editable path="Vision viewport/Level1 Walls"]
+[editable path="Scene viewport/Level1"]
+[editable path="Scene viewport/Level1/NavigationRegion2D/Level1 Walls"]
