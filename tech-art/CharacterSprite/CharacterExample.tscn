@@ -2,25 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://bu7pqis6ci7tv" path="res://art/SpritesWeasel.png" id="1_ac3ku"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac3ku"]
+atlas = ExtResource("1_ac3ku")
+region = Rect2(30, 0, 430, 2000)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxd3l"]
 atlas = ExtResource("1_ac3ku")
-region = Rect2(0, 0, 430, 1900)
+region = Rect2(460, 0, 430, 2000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tia26"]
 atlas = ExtResource("1_ac3ku")
-region = Rect2(430, 0, 430, 1900)
+region = Rect2(890, 0, 430, 2000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a41o"]
 atlas = ExtResource("1_ac3ku")
-region = Rect2(860, 0, 430, 1900)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hug06"]
-atlas = ExtResource("1_ac3ku")
-region = Rect2(1290, 0, 430, 1900)
+region = Rect2(1320, 0, 430, 2000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h7614"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac3ku")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wxd3l")
 }, {
@@ -29,17 +32,14 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2a41o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hug06")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"walk",
+"speed": 10.0
 }]
 
 [node name="CharacterExample" type="Node2D" unique_id=1070181810]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1255808173]
 sprite_frames = SubResource("SpriteFrames_h7614")
-frame_progress = 0.30109653
+animation = &"walk"
