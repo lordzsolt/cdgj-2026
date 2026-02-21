@@ -17,4 +17,6 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Level1 Walls" parent="." unique_id=24017368 instance=ExtResource("3_fh0io")]
 
+[node name="Enemies" type="Node2D" parent="." unique_id=348038307]
+
 [editable path="Level1 Walls"]
