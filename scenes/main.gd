@@ -30,7 +30,10 @@ var is_paused: bool = false:
 
 func _ready() -> void:
 	instance = self
-	switch_scene(PF.Scene.MAIN_MENU)
+	if Config.debug_skip_main_menu:
+		switch_scene(PF.Scene.GAME)
+	else:
+		switch_scene(PF.Scene.MAIN_MENU)
 
 func open_settings():
 	GAudio.uiPlop()

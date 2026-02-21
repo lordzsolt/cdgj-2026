@@ -2,7 +2,7 @@
 
 set -e
 
-GAME_NAME=foo
+GAME_NAME=cdgj-2026
 
 # Resolve the project root relative to this script's location
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
