@@ -24,7 +24,10 @@ func _physics_process(delta: float) -> void:
 	var target_velocity = input_vector * target_speed;
 
 	if input_vector:
-		animated_sprite.play("walk");
+		if is_running:
+			animated_sprite.play("run");
+		else:
+			animated_sprite.play("walk");
 		_theta = wrapf(atan2(input_vector.y, input_vector.x) + PI/2 - rotation, -PI, PI);
 		rotation += clamp(rotation_speed * delta, 0, abs(_theta)) * sign(_theta)
 	else:
