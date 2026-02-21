@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b3q6efb2elbi3"]
+
+[ext_resource type="Texture2D" uid="uid://bu7pqis6ci7tv" path="res://art/SpritesWeasel.png" id="1_s1exb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac3ku"]
+atlas = ExtResource("1_s1exb")
+region = Rect2(30, 0, 430, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxd3l"]
+atlas = ExtResource("1_s1exb")
+region = Rect2(460, 0, 430, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tia26"]
+atlas = ExtResource("1_s1exb")
+region = Rect2(890, 0, 430, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a41o"]
+atlas = ExtResource("1_s1exb")
+region = Rect2(1320, 0, 430, 2000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7614"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac3ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxd3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tia26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a41o")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="MainCharacterSprite" type="AnimatedSprite2D" unique_id=413407172]
+sprite_frames = SubResource("SpriteFrames_h7614")
+animation = &"walk"
