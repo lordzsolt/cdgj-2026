@@ -2,6 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://bncnug0djxpd8" path="res://art/WeaselSpritesFINAL.png" id="1_64u0a"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_64u0a"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(0, 0, 477, 1906)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o2cr"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(477, 0, 477, 1906)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiv0x"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(954, 0, 477, 1906)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nek8o"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(1431, 0, 477, 1906)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_udbtp"]
 atlas = ExtResource("1_64u0a")
 region = Rect2(1908, 0, 477, 1906)
@@ -22,6 +38,23 @@ region = Rect2(3339, 0, 477, 1906)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_64u0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o2cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiv0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nek8o")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_udbtp")
 }, {
 "duration": 1.0,
@@ -40,4 +73,6 @@ animations = [{
 
 [node name="MainCharacterSprite" type="AnimatedSprite2D" unique_id=413407172]
 sprite_frames = SubResource("SpriteFrames_h7614")
-animation = &"walk"
+animation = &"run"
+frame = 1
+frame_progress = 0.42019778
