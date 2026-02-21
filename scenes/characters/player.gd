@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var acc: float = 50.0;
 @export var max_speed: float = 225.0;
 
+
+@onready var animated_sprite = $MainCharacterSprite
 const JUMP_VELOCITY = -400.0;
 
 func _physics_process(delta: float) -> void:
@@ -32,6 +34,11 @@ func _physics_process(delta: float) -> void:
 	var target_speed = run_speed if is_running else speed
 	var target_velocity = input_vector * target_speed
 
+	if input_vector:
+		animated_sprite.play("walk");
+	else: 
+		animated_sprite.stop();
+		
 	velocity = velocity.move_toward(target_velocity, acc)
 
 	move_and_slide()
