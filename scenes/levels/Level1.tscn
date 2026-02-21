@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crx4nhxe8qcbu" path="res://scenes/levels/Level1.jpg" id="1_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="2_x4si1"]
+[ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level_1_walls.tscn" id="3_fh0io"]
 
 [node name="Level1" type="Node2D" unique_id=1626283689]
 
@@ -12,3 +13,7 @@ texture = ExtResource("1_j08sa")
 position = Vector2(210, 331)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
+
+[node name="Level1 Walls" parent="." unique_id=24017368 instance=ExtResource("3_fh0io")]
+
+[editable path="Level1 Walls"]

@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dilauoeegr7od"]
+
+[ext_resource type="PackedScene" uid="uid://hm3o2foxwd2m" path="res://addons/vision_cone_2d/examples/wall.tscn" id="1_r7qyf"]
+
+[node name="Level1 Walls" type="Node2D" unique_id=24017368]
+
+[node name="Wall" parent="." unique_id=1285100716 instance=ExtResource("1_r7qyf")]
+position = Vector2(307, 146)
+scale = Vector2(36, 1.2396694)
+
+[node name="Explanation" type="Label" parent="Wall" unique_id=1984952235]
+visible = false
+offset_left = 18.0
+offset_top = 13.0
+offset_right = 260.0
+offset_bottom = 39.0
+text = "Walls have collision layer 2, and vision cone has collision_layer_mask to include layer 2, so the vision will not pass through them"
+
+[node name="Wall2" parent="." unique_id=1830760156 instance=ExtResource("1_r7qyf")]
+position = Vector2(-416, -11)
+scale = Vector2(1.2396694, 9.04)
+
+[node name="Wall4" parent="." unique_id=328827636 instance=ExtResource("1_r7qyf")]
+position = Vector2(-147, -657.99994)
+scale = Vector2(0.51967007, 5.9199996)
+
+[node name="Wall5" parent="." unique_id=127751737 instance=ExtResource("1_r7qyf")]
+position = Vector2(324, -660)
+scale = Vector2(0.51967007, 5.9199996)
+
+[node name="Wall22" parent="." unique_id=1421959934 instance=ExtResource("1_r7qyf")]
+position = Vector2(695, -546.00006)
+scale = Vector2(0.51967007, 5.9199996)
+
+[node name="Wall23" parent="." unique_id=1493029437 instance=ExtResource("1_r7qyf")]
+position = Vector2(816, -436.00006)
+scale = Vector2(4.838463, 0.5478733)
+
+[node name="Wall24" parent="." unique_id=717832660 instance=ExtResource("1_r7qyf")]
+position = Vector2(566, -652.00006)
+scale = Vector2(4.838463, 0.5478733)
+
+[node name="Wall6" parent="." unique_id=1564129459 instance=ExtResource("1_r7qyf")]
+position = Vector2(97, -552.00006)
+scale = Vector2(5.122555, 0.45938542)
+
+[node name="Wall11" parent="." unique_id=1941518810 instance=ExtResource("1_r7qyf")]
+position = Vector2(306.00006, -552.00006)
+scale = Vector2(0.93346393, 0.43183047)
+
+[node name="Wall12" parent="." unique_id=1504276364 instance=ExtResource("1_r7qyf")]
+position = Vector2(-123, -552.00006)
+scale = Vector2(0.93346393, 0.43183047)
+
+[node name="Wall13" parent="." unique_id=1763606880 instance=ExtResource("1_r7qyf")]
+position = Vector2(-41.00003, -323)
+scale = Vector2(6.3734646, 0.43183047)
+
+[node name="Wall14" parent="." unique_id=1399483607 instance=ExtResource("1_r7qyf")]
+position = Vector2(175.99997, -316)
+scale = Vector2(6.3734646, 0.43183047)
+
+[node name="Wall15" parent="." unique_id=1935275952 instance=ExtResource("1_r7qyf")]
+position = Vector2(80, -436)
+scale = Vector2(0.5123738, 5.451371)
+
+[node name="Wall16" parent="." unique_id=1070336534 instance=ExtResource("1_r7qyf")]
+position = Vector2(65, -319)
+scale = Vector2(1.4297032, 1.4242095)
+
+[node name="Wall17" parent="." unique_id=412011327 instance=ExtResource("1_r7qyf")]
+position = Vector2(459, -129)
+scale = Vector2(1.4941828, 1.4242095)
+
+[node name="Wall18" parent="." unique_id=370823112 instance=ExtResource("1_r7qyf")]
+position = Vector2(691, -436)
+scale = Vector2(1.4941828, 1.4242095)
+
+[node name="Wall19" parent="." unique_id=788362347 instance=ExtResource("1_r7qyf")]
+position = Vector2(692, -653)
+scale = Vector2(1.4941828, 1.4242095)
+
+[node name="Wall20" parent="." unique_id=2108949387 instance=ExtResource("1_r7qyf")]
+position = Vector2(140, -50)
+scale = Vector2(3.0595326, -4.3815207)
+
+[node name="Wall21" parent="." unique_id=1335558529 instance=ExtResource("1_r7qyf")]
+position = Vector2(474, 69.00003)
+scale = Vector2(1.9795314, -2.78152)
+
+[node name="Wall7" parent="." unique_id=299112515 instance=ExtResource("1_r7qyf")]
+position = Vector2(207, -509.00006)
+scale = Vector2(0.46121755, 2.5802555)
+
+[node name="Wall8" parent="." unique_id=1232971610 instance=ExtResource("1_r7qyf")]
+position = Vector2(288, -509.00006)
+scale = Vector2(0.46121755, 2.5802555)
+
+[node name="Wall9" parent="." unique_id=638572226 instance=ExtResource("1_r7qyf")]
+position = Vector2(-14, -509.00006)
+scale = Vector2(0.46121755, 2.5802555)
+
+[node name="Wall10" parent="." unique_id=785623993 instance=ExtResource("1_r7qyf")]
+position = Vector2(-100, -509.00006)
+scale = Vector2(0.46121755, 2.5802555)
+
+[node name="Wall3" parent="." unique_id=1044599011 instance=ExtResource("1_r7qyf")]
+position = Vector2(-416, -645)
+scale = Vector2(1.2396694, 9.04)
