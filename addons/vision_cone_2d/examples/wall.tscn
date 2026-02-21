@@ -4,7 +4,7 @@
 size = Vector2(40, 40)
 
 [node name="Wall" type="StaticBody2D" unique_id=1285100716]
-collision_layer = 2
+collision_layer = 3
 
 [node name="WallRenderer" type="Polygon2D" parent="." unique_id=1926123209]
 scale = Vector2(2, 2)
