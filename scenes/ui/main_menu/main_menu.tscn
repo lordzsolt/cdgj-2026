@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dwemyjpql0mgt"]
+
+[ext_resource type="Script" uid="uid://loakje0qjc7q" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1ch07"]
+[ext_resource type="PackedScene" uid="uid://jjtigtwswflp" path="res://scenes/ui/ui_background.tscn" id="2_e8t4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ch07"]
+
+[node name="MainMenu" type="Control" unique_id=1774752075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ch07")
+metadata/_custom_type_script = "uid://loakje0qjc7q"
+
+[node name="UiBackground" parent="." unique_id=452482295 instance=ExtResource("2_e8t4i")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1282858164]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19000001
+anchor_top = 0.27100003
+anchor_right = 0.81000006
+anchor_bottom = 0.74300003
+offset_left = 128.39201
+offset_top = 14.475983
+offset_right = -128.39203
+offset_bottom = -22.036041
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=513143117]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1513111467]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1ch07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1237018134]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="playButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer" unique_id=730990096]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="settingsButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer" unique_id=1242781479]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="closeButton" type="Button" parent="VBoxContainer/PanelContainer/VBoxContainer" unique_id=1032790272]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"

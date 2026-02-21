@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://8iii1oa1bma4"]
+
+[ext_resource type="Script" uid="uid://dt8ko6vqfr6dh" path="res://scenes/areas/game.gd" id="1_q1a80"]
+[ext_resource type="Texture2D" uid="uid://8xiomdkmn8y7" path="res://icon.svg" id="1_r1jr2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1a80"]
+cull_mode = 2
+albedo_texture = ExtResource("1_r1jr2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kd2xv"]
+material = SubResource("StandardMaterial3D_q1a80")
+
+[node name="Game" type="Node3D" unique_id=1366296584]
+script = ExtResource("1_q1a80")
+metadata/_custom_type_script = "uid://dt8ko6vqfr6dh"
+
+[node name="coin" type="MeshInstance3D" parent="." unique_id=493580887]
+unique_name_in_owner = true
+transform = Transform3D(-0.9214908, 0, 0.3884003, 0, 1, 0, -0.3884003, 0, -0.9214908, 0, 0, 0)
+mesh = SubResource("QuadMesh_kd2xv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=936844519]
+transform = Transform3D(1, 0, 0, 0, 0.8064859, 0.59125334, 0, -0.59125334, 0.8064859, 0, 2.6644342, 3.033603)
+current = true

@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dnvn3e2x1dpq3"]
+
+[ext_resource type="Script" uid="uid://1qq0ei8ymxjh" path="res://scenes/ui/settings_menu/settings_menu.gd" id="1_rfbkj"]
+[ext_resource type="PackedScene" uid="uid://jjtigtwswflp" path="res://scenes/ui/ui_background.tscn" id="2_qa56a"]
+
+[node name="SettingsMenu" type="Control" unique_id=697618493]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rfbkj")
+
+[node name="UiBackground" parent="." unique_id=452482295 instance=ExtResource("2_qa56a")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1282858164]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.289
+anchor_top = 0.257
+anchor_right = 0.711
+anchor_bottom = 0.74300003
+offset_left = 33.35202
+offset_top = 22.035995
+offset_right = -33.35199
+offset_bottom = -22.036041
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=513143117]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=202247593]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1727434224]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fullscreen:"
+
+[node name="fullScreenCheckbox" type="CheckBox" parent="VBoxContainer/HBoxContainer" unique_id=899360883]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Music Volume" type="HBoxContainer" parent="VBoxContainer" unique_id=1441867156]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Music Volume" unique_id=1830042089]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music:"
+
+[node name="musicSlider" type="HSlider" parent="VBoxContainer/Music Volume" unique_id=592992652]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SFX" type="HBoxContainer" parent="VBoxContainer" unique_id=867024618]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SFX" unique_id=1951622752]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX:"
+
+[node name="sfxSlider" type="HSlider" parent="VBoxContainer/SFX" unique_id=801029768]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="closeButton" type="Button" parent="VBoxContainer" unique_id=977593179]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/fullScreenCheckbox" to="." method="_on_full_screen_checkbox_toggled"]
+[connection signal="value_changed" from="VBoxContainer/Music Volume/musicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFX/sfxSlider" to="." method="_on_sfx_slider_value_changed"]

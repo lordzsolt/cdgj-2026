@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmxd6swg3ftct"]
+
+[ext_resource type="Script" uid="uid://cjo7vk77qa16" path="res://global/global_audio/global_audio.gd" id="1_aakte"]
+[ext_resource type="AudioStream" uid="uid://thl7i6uugsy" path="res://audio/sfx/plop.wav" id="2_5nr8x"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_amuxc"]
+random_pitch = 1.005793
+streams_count = 1
+stream_0/stream = ExtResource("2_5nr8x")
+
+[node name="GlobalAudio" type="Node" unique_id=1769354117]
+script = ExtResource("1_aakte")
+
+[node name="uiPlop" type="AudioStreamPlayer" parent="." unique_id=1994873958]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_amuxc")
+pitch_scale = 2.0
+bus = &"SFX"

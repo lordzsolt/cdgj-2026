@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://uilssfywbthk"]
+
+[ext_resource type="Script" uid="uid://br8u00imena8e" path="res://global/debug/debug_panel.gd" id="1_htaeg"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=899713603]
+custom_minimum_size = Vector2(320, 0)
+anchors_preset = -1
+anchor_right = 0.333
+anchor_bottom = 1.0
+offset_right = 0.32000732
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_htaeg")
+metadata/_custom_type_script = "uid://br8u00imena8e"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=973213511]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=781124753]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "FPS:"
+
+[node name="fpsLabel" type="Label" parent="HBoxContainer" unique_id=727381129]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="DebugMessages" type="VBoxContainer" parent="." unique_id=1786554476 groups=["debug_messages"]]
+layout_mode = 2
+size_flags_vertical = 3

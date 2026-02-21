@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://i2du4wt0hkkh"]
+
+[ext_resource type="Script" uid="uid://su4j16tjvei3" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://uilssfywbthk" path="res://global/debug/debug_panel.tscn" id="2_0wfyh"]
+
+[node name="Main" type="Node" unique_id=592520302]
+script = ExtResource("1_sugp2")
+
+[node name="root" type="Node" parent="." unique_id=1124400026]
+unique_name_in_owner = true
+
+[node name="game_ui" type="Node" parent="." unique_id=885745875]
+unique_name_in_owner = true
+
+[node name="Overlay" type="CanvasLayer" parent="." unique_id=749708516]
+
+[node name="DebugPanel" parent="Overlay" unique_id=710920525 instance=ExtResource("2_0wfyh")]

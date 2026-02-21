@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Main Scene",
+      "type": "godot",
+      "request": "launch",
+      "project": "${workspaceFolder}",
+      "scene": "main",
+      "port": 6007
+    },
+    {
+      "name": "Launch Current Scene",
+      "type": "godot",
+      "request": "launch",
+      "project": "${workspaceFolder}",
+      "scene": "current",
+      "port": 6007
+    },
+    {
+      "name": "Attach to Running",
+      "type": "godot",
+      "request": "attach",
+      "address": "127.0.0.1",
+      "port": 6007
+    }
+  ]
+}

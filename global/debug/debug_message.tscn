@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://tqneagvwff5v"]
+
+[ext_resource type="Script" uid="uid://cpmiowohqruko" path="res://global/debug/debug_message.gd" id="1_63dhd"]
+[ext_resource type="Texture2D" uid="uid://dpp8xgnbngkex" path="res://global/debug/icons/information.png" id="2_w6t8c"]
+
+[node name="ColorRect" type="PanelContainer" unique_id=1404724221]
+offset_right = 220.0
+offset_bottom = 48.0
+script = ExtResource("1_63dhd")
+metadata/_custom_type_script = "uid://cpmiowohqruko"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=33496170]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1857116565]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_w6t8c")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=2016134459]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "Testing this as ldasdj lasdjlas jdlkasj dlkasj dlkas jdlkas jdlka jsdslk ajdlkasj ldasj lasj dlka jdlask jladskjdalsjl"
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="." unique_id=383413765]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
