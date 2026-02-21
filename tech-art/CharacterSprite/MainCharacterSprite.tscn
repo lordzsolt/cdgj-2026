@@ -1,37 +1,37 @@
 [gd_scene format=3 uid="uid://b3q6efb2elbi3"]
 
-[ext_resource type="Texture2D" uid="uid://bu7pqis6ci7tv" path="res://art/SpritesWeasel.png" id="1_s1exb"]
+[ext_resource type="Texture2D" uid="uid://bncnug0djxpd8" path="res://art/WeaselSpritesFINAL.png" id="1_64u0a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ac3ku"]
-atlas = ExtResource("1_s1exb")
-region = Rect2(30, 0, 430, 2000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_udbtp"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(1908, 0, 477, 1906)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxd3l"]
-atlas = ExtResource("1_s1exb")
-region = Rect2(460, 0, 430, 2000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sdxj"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(2385, 0, 477, 1906)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tia26"]
-atlas = ExtResource("1_s1exb")
-region = Rect2(890, 0, 430, 2000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8uwt"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(2862, 0, 477, 1906)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2a41o"]
-atlas = ExtResource("1_s1exb")
-region = Rect2(1320, 0, 430, 2000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e7d0"]
+atlas = ExtResource("1_64u0a")
+region = Rect2(3339, 0, 477, 1906)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h7614"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ac3ku")
+"texture": SubResource("AtlasTexture_udbtp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wxd3l")
+"texture": SubResource("AtlasTexture_4sdxj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tia26")
+"texture": SubResource("AtlasTexture_a8uwt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2a41o")
+"texture": SubResource("AtlasTexture_7e7d0")
 }],
 "loop": true,
 "name": &"walk",
