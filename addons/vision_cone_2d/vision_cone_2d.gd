@@ -115,8 +115,7 @@ func _draw():
 func _update_collision_polygon():
 	if write_collision_polygon == null:
 		return
-	if _vision_points.size() > 2:
-		write_collision_polygon.polygon = _vision_points
+	write_collision_polygon.polygon = _vision_points
 
 func _update_render_polygon():
 	if write_polygon2d == null:
