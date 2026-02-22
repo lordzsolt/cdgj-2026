@@ -67,7 +67,21 @@ func play_game():
 		comics.visible = false
 		switch_scene(PF.Scene.LEVEL_1)
 	)
-#
+
+	comics.visible = true
+
+func show_level_success():
+	_active_scene.process_mode = Node.PROCESS_MODE_DISABLED
+
+	comics.setup([
+		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicDEMO.png"),
+	], func():
+		comics.visible = false
+		switch_scene(PF.Scene.LEVEL_2)
+	)
+
 	comics.visible = true
 
 func switch_scene(scene: PF.Scene):

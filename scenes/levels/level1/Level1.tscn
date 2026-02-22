@@ -43,6 +43,9 @@ point_count = 13
 [sub_resource type="CircleShape2D" id="CircleShape2D_fp22n"]
 radius = 131.01526
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp1f7"]
+size = Vector2(307, 191)
+
 [node name="Level1" type="Node2D" unique_id=1626283689]
 script = ExtResource("1_68ib6")
 
@@ -207,5 +210,14 @@ action_name = "get the eggs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="QteEggArea/InteractionArea" unique_id=1674723138]
 shape = SubResource("CircleShape2D_fp22n")
+
+[node name="SuccessArea" type="Area2D" parent="." unique_id=388584653]
+position = Vector2(825, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuccessArea" unique_id=1666113355]
+position = Vector2(40.5, 48.5)
+shape = SubResource("RectangleShape2D_jp1f7")
+
+[connection signal="body_entered" from="SuccessArea" to="." method="_on_success_area_body_entered"]
 
 [editable path="NavigationRegion2D/Level1 Walls"]
