@@ -3,6 +3,7 @@ extends Node2D
 const button_sequence = preload("res://scenes/ui/qte/buttonSequence.tscn")
 
 @onready var interaction_area = $InteractionArea
+@export var egg : Sprite2D
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -17,3 +18,5 @@ func _on_button_sequence_finished(success: bool, instance: Node) -> void:
 	# TODO: Show
 	gs.is_chaotic = success
 	instance.queue_free()
+	if egg:
+		egg.visible = false

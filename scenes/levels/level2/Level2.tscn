@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_j87tk"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="5_eaecy"]
 [ext_resource type="Texture2D" uid="uid://bd0q7lw2qqeld" path="res://art/SafeStone.png" id="6_nk2dm"]
+[ext_resource type="Texture2D" uid="uid://b5bk3sfdoy5ig" path="res://art/EGG.png" id="7_uwb11"]
 [ext_resource type="Texture2D" uid="uid://curweg2840id5" path="res://art/NPCWeasel.png" id="7_xq7co"]
 [ext_resource type="Script" uid="uid://hrwp4ysgic26" path="res://scenes/ui/qte/qte_interaction_area.gd" id="8_uq02b"]
 [ext_resource type="PackedScene" uid="uid://s30nlwxa1iq4" path="res://scenes/ui/qte/interaction_area.tscn" id="9_uwb11"]
@@ -146,6 +147,11 @@ position = Vector2(-577, 702)
 position = Vector2(-314, -219)
 path = NodePath("")
 
+[node name="Egg" type="Sprite2D" parent="." unique_id=314661509]
+position = Vector2(903.00006, -638)
+scale = Vector2(0.022263333, 0.022263333)
+texture = ExtResource("7_uwb11")
+
 [node name="Player" parent="." unique_id=1694873845 instance=ExtResource("5_eaecy")]
 position = Vector2(881.99994, 671)
 rotation = 0.2679689
@@ -154,10 +160,11 @@ rotation = 0.2679689
 position = Vector2(0, 1)
 zoom = Vector2(0.5, 0.5)
 
-[node name="QteEggArea" type="Node2D" parent="." unique_id=993471863]
+[node name="QteEggArea" type="Node2D" parent="." unique_id=993471863 node_paths=PackedStringArray("egg")]
 position = Vector2(-558, -905)
 scale = Vector2(0.8782462, 0.7697178)
 script = ExtResource("8_uq02b")
+egg = NodePath("../Egg")
 
 [node name="InteractionArea" parent="QteEggArea" unique_id=344198781 instance=ExtResource("9_uwb11")]
 unique_name_in_owner = true
