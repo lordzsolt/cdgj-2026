@@ -84,6 +84,20 @@ func show_level_success():
 
 	comics.visible = true
 
+func win_game():
+	_active_scene.process_mode = Node.PROCESS_MODE_DISABLED
+
+	comics.setup([
+		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicDEMO.png"),
+	], func():
+		comics.visible = false
+		switch_scene(PF.Scene.MAIN_MENU)
+	)
+
+	comics.visible = true
+
 func switch_scene(scene: PF.Scene):
 	is_paused = false
 
