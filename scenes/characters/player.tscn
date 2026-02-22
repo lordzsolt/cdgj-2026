@@ -1,18 +1,74 @@
 [gd_scene format=3 uid="uid://cpkstcf6exa0s"]
 
+[ext_resource type="Shader" uid="uid://3pyc1qaqthco" path="res://scenes/characters/player.gdshader" id="1_76oj4"]
 [ext_resource type="Script" uid="uid://lkf4qlxelv8c" path="res://scenes/characters/player.gd" id="1_yewv4"]
 [ext_resource type="PackedScene" uid="uid://b3q6efb2elbi3" path="res://tech-art/CharacterSprite/MainCharacterSprite.tscn" id="2_76oj4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dyp2m"]
+shader = ExtResource("1_76oj4")
+shader_parameter/flash_color = Color(0.02004357, 0.23925588, 0.9325535, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="Animation" id="Animation_udbtp"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCharacterSprite:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4sdxj"]
+resource_name = "exhausted"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainCharacterSprite:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yewv4"]
+_data = {
+&"RESET": SubResource("Animation_udbtp"),
+&"exhausted": SubResource("Animation_4sdxj")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76oj4"]
+shader = ExtResource("1_76oj4")
+shader_parameter/flash_color = Color(0.4032, 0.42503986, 0.84, 1)
+shader_parameter/flash_value = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yewv4"]
 height = 80.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1694873845 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1694873845 node_paths=PackedStringArray("animation_player_2") groups=["player"]]
+material = SubResource("ShaderMaterial_dyp2m")
 script = ExtResource("1_yewv4")
+animation_player_2 = NodePath("AnimationPlayer2")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=145845154]
+libraries/ = SubResource("AnimationLibrary_yewv4")
+autoplay = &"RESET"
 
 [node name="MainCharacterSprite" parent="." unique_id=413407172 instance=ExtResource("2_76oj4")]
+material = SubResource("ShaderMaterial_76oj4")
 scale = Vector2(0.060465116, 0.06046511)
 frame = 3
 frame_progress = 0.6726583
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384011758]
+visible = false
 shape = SubResource("CapsuleShape2D_yewv4")

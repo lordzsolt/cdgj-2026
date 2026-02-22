@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://che4c436gflll"]
 
 [ext_resource type="Script" uid="uid://b4kxhnvej56b8" path="res://scenes/ui/qte/button_sequence.gd" id="1_ye2xd"]
+[ext_resource type="Texture2D" uid="uid://gnxxot1xk4hn" path="res://art/keys/Q.png" id="2_8fwjc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn1mu"]
 border_width_left = 5

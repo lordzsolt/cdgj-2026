@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
+@export var animation_player_2: AnimationPlayer
 
 @export var speed: float = 200.0;
 @export var run_speed: float = 300.0;
@@ -39,10 +40,17 @@ func can_run() -> bool:
 	return !is_exhausted()
 
 func is_exhausted() -> bool:
+	var is_exhausted: bool = false;
 	if (got_tired):
-		return stamina <= STAMINA_EXHAUSTED_THRESHOLD
+		is_exhausted = stamina <= STAMINA_EXHAUSTED_THRESHOLD
+	else:
+		is_exhausted = stamina <= STAMINA_MIN;
 
-	return stamina <= STAMINA_MIN;
+	if (is_exhausted):
+		animation_player_2.play("exhausted")
+	else:
+		animation_player_2.stop()
+	return is_exhausted;
 
 func _drain_stamina(delta: float) -> void:
 	stamina = max(STAMINA_MIN, stamina - STAMINA_DRAIN_RATE * delta)
