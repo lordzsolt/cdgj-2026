@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bncyqus2c7jhy" path="res://scenes/levels/level1/level_1.gd" id="1_68ib6"]
 [ext_resource type="Texture2D" uid="uid://b4dtmhgrcjaw7" path="res://scenes/levels/level1/Level1.jpg" id="2_224sc"]
-[ext_resource type="Script" uid="uid://052fucs4uc6b" path="res://scenes/levels/level1/qte_egg_area.gd" id="2_fp22n"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="2_x4si1"]
 [ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level1/level_1_walls.tscn" id="3_fh0io"]
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_fh0io"]
@@ -41,10 +40,8 @@ point_count = 13
 [sub_resource type="CircleShape2D" id="CircleShape2D_fp22n"]
 radius = 131.01526
 
-[node name="Level1" type="Node2D" unique_id=1626283689 node_paths=PackedStringArray("stealth_enemies", "chaotic_enemies")]
+[node name="Level1" type="Node2D" unique_id=1626283689]
 script = ExtResource("1_68ib6")
-stealth_enemies = NodePath("StealthEnemies")
-chaotic_enemies = NodePath("ChaoticEnemies")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1361002411]
 texture = ExtResource("2_224sc")
@@ -179,7 +176,7 @@ speed = 150
 chase_speed_multiplier = 1.0
 
 [node name="Player" parent="." unique_id=1694873845 instance=ExtResource("2_x4si1")]
-position = Vector2(796.99994, 535)
+position = Vector2(781, -498)
 rotation = 5.589639
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
@@ -188,7 +185,6 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="QteEggArea" type="Node2D" parent="." unique_id=303727088]
 position = Vector2(894, -614)
-script = ExtResource("2_fp22n")
 
 [node name="InteractionArea" parent="QteEggArea" unique_id=344198781 instance=ExtResource("6_hanku")]
 unique_name_in_owner = true

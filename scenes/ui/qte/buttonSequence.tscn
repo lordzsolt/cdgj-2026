@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://che4c436gflll"]
 
-[ext_resource type="Script" uid="uid://bb2xkvlf8t7wc" path="res://scenes/ui/qte/button_sequence.gd" id="1_ye2xd"]
-[ext_resource type="Texture2D" uid="uid://bopl6leim7ndc" path="res://art/keys/Q-Key.png" id="2_8fwjc"]
+[ext_resource type="Script" uid="uid://b4kxhnvej56b8" path="res://scenes/ui/qte/button_sequence.gd" id="1_ye2xd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn1mu"]
 border_width_left = 5
@@ -66,31 +65,26 @@ theme_override_constants/separation = 20
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=1022867175]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-texture = ExtResource("2_8fwjc")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=1182701964]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-texture = ExtResource("2_8fwjc")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=2057369725]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-texture = ExtResource("2_8fwjc")
 expand_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=715289288]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-texture = ExtResource("2_8fwjc")
 expand_mode = 1
 
 [node name="TextureRect5" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=577940709]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-texture = ExtResource("2_8fwjc")
 expand_mode = 1
 
 [node name="successLabel" type="Label" parent="MarginContainer" unique_id=1907474350]

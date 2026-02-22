@@ -22,7 +22,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	success_label.hide()
 	_set_random_sequence()
-	
+
 func _set_random_sequence() -> void:
 	for node in button_box.get_children():
 		var randomPick = buttonSelection.pick_random();
@@ -40,17 +40,17 @@ func _input(event: InputEvent) -> void:
 
 func _next_index() -> void:
 	button_box.get_child(sequenceIndex).modulate.a = 0
-	
+
 	sequenceIndex += 1
-	
-	if sequenceIndex >= actionSequence.size(): 
+
+	if sequenceIndex >= actionSequence.size():
 		timer.paused = true
 		_on_timer_timeout()
-		
+
 
 func _reset_all() -> void:
 	sequenceIndex = 0
-	
+
 	for node in button_box.get_children():
 		node.modulate.a = 1
 
@@ -63,9 +63,9 @@ func _on_timer_timeout() -> void:
 	var success = timer.time_left
 
 	_update_success_label(success)
-	
+
 	get_tree().paused = false
-	
+
 	finished.emit(success)
 
 func _update_success_label(success: bool) -> void:

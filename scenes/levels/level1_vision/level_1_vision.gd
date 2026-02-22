@@ -28,3 +28,6 @@ var stealth_mode : bool:
 
 func start_chaotic():
 	stealth_mode = false
+
+func _process(delta: float) -> void:
+	stealth_mode = !gs.is_chaotic

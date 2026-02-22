@@ -22,7 +22,5 @@ func _on_interact():
 		get_tree().root.get_child(0).add_child(instance)
 
 func _on_button_sequence_finished(success: bool, instance: Node) -> void:
-	if success:
-		instance.queue_free()
-	else:
-		instance.queue_free()
+	gs.is_chaotic = success
+	instance.queue_free()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bemds8low6c65"]
 
-[ext_resource type="PackedScene" uid="uid://d1m4syw57glrl" path="res://scenes/levels/test_level_f/qte_interaction_area.tscn" id="1_rwnkk"]
+[ext_resource type="PackedScene" uid="uid://d1m4syw57glrl" path="res://scenes/ui/qte/qte_interaction_area.tscn" id="1_rwnkk"]
 [ext_resource type="Texture2D" uid="uid://8xiomdkmn8y7" path="res://icon.svg" id="2_uawjl"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="3_noh0p"]
 
