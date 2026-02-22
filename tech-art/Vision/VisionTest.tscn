@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bvboknb7ylm4h" path="res://tech-art/Vision/VisionSync.gd" id="2_07mg8"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="2_mjvtq"]
-[ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://tech-art/Vision/VisionTest.gdshader" id="2_q17aj"]
+[ext_resource type="Shader" uid="uid://b1wd26dca20bx" path="res://tech-art/Vision/StealthShader.gdshader" id="2_pmpup"]
+[ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://tech-art/Vision/PanicShader.gdshader" id="2_q17aj"]
 [ext_resource type="PackedScene" uid="uid://d4ef0p7fvb87p" path="res://scenes/levels/level1/Level1.tscn" id="3_q17aj"]
 [ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level1/level_1_walls.tscn" id="4_mjvtq"]
 [ext_resource type="Texture2D" uid="uid://b4dtmhgrcjaw7" path="res://scenes/levels/level1/Level1.jpg" id="6_nd0lk"]
@@ -16,9 +17,9 @@ viewport_path = NodePath("Map viewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_xiha2"]
 viewport_path = NodePath("Vision viewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrkaj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aav2g"]
 resource_local_to_scene = true
-shader = ExtResource("2_q17aj")
+shader = ExtResource("2_pmpup")
 shader_parameter/level_texture = SubResource("ViewportTexture_b2ibo")
 shader_parameter/vision_texture = SubResource("ViewportTexture_xiha2")
 shader_parameter/map_texture = SubResource("ViewportTexture_5vmk5")
@@ -29,6 +30,15 @@ shader_parameter/darkness = 0.3
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_b2ibo"]
 gradient = SubResource("Gradient_qrkaj")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrkaj"]
+resource_local_to_scene = true
+shader = ExtResource("2_q17aj")
+shader_parameter/level_texture = SubResource("ViewportTexture_b2ibo")
+shader_parameter/vignette_size = 0.5
+shader_parameter/vignette_smoothness = 0.5
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_intensity = 0.1
+
 [node name="VisionTest2" type="Control" unique_id=1553908456]
 layout_mode = 3
 anchors_preset = 15
@@ -37,7 +47,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=342990256]
+[node name="TextureRect Stealth" type="TextureRect" parent="." unique_id=1571193238]
+visible = false
+material = SubResource("ShaderMaterial_aav2g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_b2ibo")
+
+[node name="TextureRect Panic" type="TextureRect" parent="." unique_id=342990256]
 material = SubResource("ShaderMaterial_qrkaj")
 layout_mode = 1
 anchors_preset = 15
@@ -96,7 +117,7 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Level1" parent="Scene viewport" unique_id=1626283689 instance=ExtResource("3_q17aj")]
 
-[node name="Player" parent="Scene viewport/Level1" index="3" unique_id=1694873845]
+[node name="Player" parent="Scene viewport/Level1" index="4" unique_id=1694873845]
 position = Vector2(887, 655)
 
 [node name="Map viewport" type="SubViewport" parent="." unique_id=1250986769]
