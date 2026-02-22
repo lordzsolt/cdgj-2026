@@ -45,10 +45,20 @@ script = ExtResource("1_k6vdr")
 texture = ExtResource("2_nk2dm")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=551744483]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_fh0io")
 
 [node name="Level2 Walls" parent="NavigationRegion2D" unique_id=2108918902 instance=ExtResource("3_xq7co")]
+
+[node name="SafeStone" type="Sprite2D" parent="." unique_id=1016753751]
+position = Vector2(906, 554)
+scale = Vector2(0.09050763, 0.09050763)
+texture = ExtResource("6_nk2dm")
+
+[node name="NPC" type="Sprite2D" parent="." unique_id=1366908090]
+position = Vector2(988.6192, 608.99445)
+rotation = 0.5852083
+scale = Vector2(0.09050763, 0.09050763)
+texture = ExtResource("7_xq7co")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=348038307]
 
@@ -103,14 +113,3 @@ rotation = 0.2679689
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
 position = Vector2(0, 1)
 zoom = Vector2(0.5, 0.5)
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1016753751]
-position = Vector2(909.61914, 563.99445)
-scale = Vector2(0.09050763, 0.09050763)
-texture = ExtResource("6_nk2dm")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1366908090]
-position = Vector2(988.6192, 608.99445)
-rotation = 0.58520824
-scale = Vector2(0.09050763, 0.09050763)
-texture = ExtResource("7_xq7co")

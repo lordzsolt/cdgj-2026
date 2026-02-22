@@ -166,6 +166,14 @@ scale = Vector2(1.9795314, -2.78152)
 position = Vector2(592, 77)
 scale = Vector2(4.4995337, -2.78152)
 
+[node name="Wall54" parent="." unique_id=2014710697 instance=ExtResource("1_r7qyf")]
+position = Vector2(911.00006, 412)
+scale = Vector2(4.4995337, -2.78152)
+
+[node name="Wall55" parent="." unique_id=1431868004 instance=ExtResource("1_r7qyf")]
+position = Vector2(577, 717.00006)
+scale = Vector2(4.4995337, -5.461521)
+
 [node name="Wall30" parent="." unique_id=1786401829 instance=ExtResource("1_r7qyf")]
 position = Vector2(951.99994, -17)
 scale = Vector2(4.5926824, -8.886497)
@@ -244,3 +252,8 @@ scale = Vector2(4.7670503, -40.906094)
 [node name="Wall51" parent="." unique_id=785628153 instance=ExtResource("1_r7qyf")]
 position = Vector2(5, 846)
 scale = Vector2(55.20356, -3.4774582)
+
+[node name="Wall63" parent="." unique_id=376393972 instance=ExtResource("3_h4k4d")]
+position = Vector2(996, 504)
+rotation = -0.07393244
+scale = Vector2(2.022077, 2.0985668)
