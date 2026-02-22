@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dilauoeegr7od"]
 
 [ext_resource type="PackedScene" uid="uid://hm3o2foxwd2m" path="res://addons/vision_cone_2d/examples/wall.tscn" id="1_r7qyf"]
-[ext_resource type="PackedScene" uid="uid://rl52ecds30is" path="res://addons/vision_cone_2d/examples/wall-circular.tscn" id="3_h4k4d"]
+[ext_resource type="PackedScene" path="res://addons/vision_cone_2d/examples/wall-circular.tscn" id="3_h4k4d"]
 
 [node name="Level1 Walls" type="Node2D" unique_id=2108918902]
 
@@ -183,8 +183,8 @@ position = Vector2(-14, -509.00006)
 scale = Vector2(0.46121755, 2.5802555)
 
 [node name="Wall10" parent="." unique_id=849081211 instance=ExtResource("1_r7qyf")]
-position = Vector2(-100, -509.00006)
-scale = Vector2(0.46121755, 2.5802555)
+position = Vector2(-103, -520)
+scale = Vector2(-0.077, 2)
 
 [node name="Wall3" parent="." unique_id=769256915 instance=ExtResource("1_r7qyf")]
 position = Vector2(-416, -645)
