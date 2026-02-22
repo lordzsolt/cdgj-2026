@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b4q71mjsg250l"]
+
+[ext_resource type="Script" uid="uid://bohsecsftbbt" path="res://scenes/ui/death_screen/death_screen.gd" id="1_h504w"]
+[ext_resource type="Texture2D" uid="uid://bio4r528jb2mf" path="res://art/DeathScreenFINAL.png" id="1_ypck1"]
+
+[node name="DeathScreen" type="Control" unique_id=385692731]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h504w")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=284819858]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ypck1")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1707544520]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 113.0
+offset_top = 257.0
+offset_right = 313.0
+offset_bottom = 379.0
+theme_override_constants/separation = 16
+
+[node name="resumeButton" type="Button" parent="VBoxContainer" unique_id=777983146]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Retry"
+
+[node name="quitButton" type="Button" parent="VBoxContainer" unique_id=90320831]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"

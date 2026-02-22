@@ -28,7 +28,9 @@ var health := 3
 
 func hit():
 	health -= 1
-	db.log("hit, health now " + str(health))
+
+	if health <= 0:
+		Main.instance.show_defeat()
 
 func _ready() -> void:
 	health = 3

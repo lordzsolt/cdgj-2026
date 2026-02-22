@@ -64,6 +64,7 @@ func play_game():
 		preload("res://art/IntroComicDEMO.png"),
 		preload("res://art/IntroComicDEMO.png"),
 	], func():
+		gs.current_level = 1
 		comics.visible = false
 		switch_scene(PF.Scene.LEVEL_1)
 	)
@@ -78,6 +79,7 @@ func show_level_success():
 		preload("res://art/IntroComicDEMO.png"),
 		preload("res://art/IntroComicDEMO.png"),
 	], func():
+		gs.current_level = 2
 		comics.visible = false
 		switch_scene(PF.Scene.LEVEL_2)
 	)
@@ -92,11 +94,15 @@ func win_game():
 		preload("res://art/IntroComicDEMO.png"),
 		preload("res://art/IntroComicDEMO.png"),
 	], func():
+		gs.current_level = 0
 		comics.visible = false
 		switch_scene(PF.Scene.MAIN_MENU)
 	)
 
 	comics.visible = true
+
+func show_defeat():
+	switch_scene(PF.Scene.DEFEAT_SCENE)
 
 func switch_scene(scene: PF.Scene):
 	is_paused = false
