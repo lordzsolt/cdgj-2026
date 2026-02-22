@@ -12,7 +12,14 @@ enum Type { CHICKEN, ROOSTER }
 @export var patrol_arrive_dist := 12.0
 @export var detection_grace_period: float = 0.5
 @export var panic_wander_radius: float = 300.0
-@export var hit_distance := 3
+
+var hit_distance:
+	get():
+		if type == Type.ROOSTER:
+			return 75
+		else:
+			return 20
+
 @export var hit_cooldown := 5000
 
 @onready var agent: NavigationAgent2D = %agent
@@ -87,10 +94,18 @@ func _physics_process(delta):
 			agent.target_position = player.global_position
 			_follow_agent(speed * chase_speed_multiplier)
 
+			if global_position.distance_to(player.position) <= hit_distance:
+				player.hit()
+
 		PANIC:
 			feather_particle.emitting = false
 			main_character_sprite.play("run")
 			_panic_tick -= delta
+
+			var player = get_tree().get_first_node_in_group("player")
+			if player != null and global_position.distance_to(player.position) <= hit_distance:
+				player.hit()
+
 			if _panic_tick <= 0.0:
 				_panic_tick = 1.0
 				var angle := randf_range(0.0, TAU)
@@ -116,6 +131,12 @@ func _update_state():
 			vision_cone._angular_delta = vision_cone._angle / vision_cone.ray_count
 			vision_cone.recalculate_vision(true)
 			state = PANIC
+
+			player = get_tree().get_first_node_in_group("player")
+			if player == null:
+				db.e("Player was not found, nothing in player group.")
+				return
+			return
 
 	match state:
 		PATROL:
