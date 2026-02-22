@@ -58,6 +58,7 @@ map_viewport = NodePath("../Map viewport")
 level_player = NodePath("../Scene viewport/Level1/Player")
 view_player = NodePath("../Vision viewport/Vision player")
 map_player = NodePath("../Map viewport/Camera2D")
+original_zoom = Vector2(0.7, 0.7)
 
 [node name="Vision viewport" type="SubViewport" parent="." unique_id=1269793411]
 
