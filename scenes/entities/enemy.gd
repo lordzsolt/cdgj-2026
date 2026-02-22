@@ -12,6 +12,8 @@ enum Type { CHICKEN, ROOSTER }
 @export var patrol_arrive_dist := 12.0
 @export var detection_grace_period: float = 0.5
 @export var panic_wander_radius: float = 300.0
+@export var hit_distance := 0.5
+@export var hit_cooldown := 5000
 
 @onready var agent: NavigationAgent2D = %agent
 @onready var feather_particle: CPUParticles2D = %featherParticle
@@ -25,6 +27,7 @@ var patrol_points: PackedVector2Array
 var patrol_index := 0
 var detection_timer: SceneTreeTimer
 var _panic_tick: float = 0.0
+var _last_hit_time_ms : int = 0
 
 @onready var player: Player = null
 
@@ -64,6 +67,10 @@ func _physics_process(delta):
 			main_character_sprite.play("run")
 			agent.target_position = player.global_position
 			_follow_agent(speed * chase_speed_multiplier)
+			if global_position.distance_to(player.position) <= hit_distance:
+				player.hit()
+				_last_hit_time_ms = Time.get_ticks_msec()
+				state = PATROL
 
 		RETURN:
 			feather_particle.emitting = true
@@ -172,6 +179,13 @@ func _closest_point_on_segment(p: Vector2, a: Vector2, b: Vector2) -> Vector2:
 
 func _on_vision_cone_area_body_entered(body: Node2D) -> void:
 	if body is Player:
+		var current_time_ms := Time.get_ticks_msec()
+		if current_time_ms - _last_hit_time_ms < hit_cooldown:
+			print("ignoring")
+			return
+		else:
+			print("Not ignoring")
+		
 		detection_timer = get_tree().create_timer(detection_grace_period)
 		detection_timer.timeout.connect(_detect_player.bind(body))
 

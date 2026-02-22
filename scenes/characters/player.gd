@@ -23,6 +23,14 @@ var _theta: float;
 var _is_moving: bool = false;
 var _is_running: bool = false;
 
+var health := 3
+
+func hit():
+	health -= 1
+	print("hit, health now ", health)
+
+func _ready() -> void:
+	health = 3
 
 @onready var animated_sprite = $MainCharacterSprite
 const JUMP_VELOCITY = -400.0;
