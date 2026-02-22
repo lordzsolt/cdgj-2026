@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://su4j16tjvei3" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://uilssfywbthk" path="res://global/debug/debug_panel.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bofcwc3diamsv" path="res://scenes/ui/comics/comics.tscn" id="2_sugp2"]
 
 [node name="Main" type="Node" unique_id=592520302]
 script = ExtResource("1_sugp2")
@@ -11,6 +12,10 @@ unique_name_in_owner = true
 
 [node name="game_ui" type="CanvasLayer" parent="." unique_id=645276641]
 unique_name_in_owner = true
+
+[node name="Comics" parent="game_ui" unique_id=380076874 instance=ExtResource("2_sugp2")]
+unique_name_in_owner = true
+visible = false
 
 [node name="Overlay" type="CanvasLayer" parent="." unique_id=749708516]
 

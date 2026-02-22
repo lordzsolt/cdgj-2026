@@ -11,6 +11,8 @@ static var instance: Main
 var _active_scene: Node
 
 @onready var game_ui: Node = %game_ui
+@onready var comics: Comics = %Comics
+
 var _pause_menu: Node
 var _settings_menu: Node
 
@@ -31,7 +33,7 @@ var is_paused: bool = false:
 func _ready() -> void:
 	instance = self
 	if Config.debug_skip_main_menu:
-		switch_scene(PF.Scene.GAME)
+		play_game()
 	else:
 		switch_scene(PF.Scene.MAIN_MENU)
 
@@ -55,6 +57,18 @@ func pause_game():
 func resume_game():
 	is_paused = false
 	GAudio.uiPlop()
+
+func play_game():
+	comics.setup([
+		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicDEMO.png"),
+	], func():
+		comics.visible = false
+		switch_scene(PF.Scene.LEVEL_1)
+	)
+#
+	comics.visible = true
 
 func switch_scene(scene: PF.Scene):
 	is_paused = false
