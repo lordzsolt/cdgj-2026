@@ -24,7 +24,7 @@ var _theta: float;
 var _is_moving: bool = false;
 var _is_running: bool = false;
 
-var health := 3
+var health := 1
 
 func hit():
 	health -= 1
@@ -33,7 +33,7 @@ func hit():
 		Main.instance.show_defeat()
 
 func _ready() -> void:
-	health = 3
+	health = 1
 
 @onready var animated_sprite = $MainCharacterSprite
 const JUMP_VELOCITY = -400.0;
