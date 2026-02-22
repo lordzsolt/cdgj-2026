@@ -1,12 +1,25 @@
 extends Node2D
 
-@onready var stealth_enemies: Node2D = %StealthEnemies
+@export var stealth_enemies: Node2D
+@export var chaotic_enemies: Node2D
 
 func _ready() -> void:
-	get_tree().create_timer(1.0).timeout.connect(_toggle_chaotic)
+	stealth_mode = true
+	#get_tree().create_timer(1.0).timeout.connect(start_chaotic)
 
-func _toggle_chaotic():
-	stealth_enemies.visible = false
-	stealth_enemies.process_mode = Node.PROCESS_MODE_DISABLED
+var stealth_mode : bool:
+	set(value):
+		stealth_enemies.visible = value
+		chaotic_enemies.visible = !value
+		
+		if value:
+			stealth_enemies.process_mode = Node.PROCESS_MODE_INHERIT
+			chaotic_enemies.process_mode = Node.PROCESS_MODE_DISABLED
+		else:
+			stealth_enemies.process_mode = Node.PROCESS_MODE_DISABLED
+			chaotic_enemies.process_mode = Node.PROCESS_MODE_INHERIT
+		
+		gs.is_chaotic = !value
 
-	gs.is_chaotic = true
+func start_chaotic():
+	stealth_mode = false

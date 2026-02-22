@@ -41,8 +41,10 @@ point_count = 13
 [sub_resource type="CircleShape2D" id="CircleShape2D_fp22n"]
 radius = 131.01526
 
-[node name="Level1" type="Node2D" unique_id=1626283689]
+[node name="Level1" type="Node2D" unique_id=1626283689 node_paths=PackedStringArray("stealth_enemies", "chaotic_enemies")]
 script = ExtResource("1_68ib6")
+stealth_enemies = NodePath("StealthEnemies")
+chaotic_enemies = NodePath("ChaoticEnemies")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1361002411]
 texture = ExtResource("2_224sc")
