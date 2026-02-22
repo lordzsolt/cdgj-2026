@@ -26,6 +26,7 @@ offset_left = 106.0
 offset_top = 191.0
 offset_right = 206.0
 offset_bottom = 251.0
+text = "Start"
 
 [node name="settingsButton" type="Button" parent="." unique_id=862507125]
 custom_minimum_size = Vector2(180, 60)
@@ -34,11 +35,14 @@ offset_left = 106.0
 offset_top = 257.0
 offset_right = 206.0
 offset_bottom = 317.0
+text = "Settings"
 
 [node name="closeButton" type="Button" parent="." unique_id=1022008478]
+visible = false
 custom_minimum_size = Vector2(180, 60)
 layout_mode = 0
 offset_left = 106.0
 offset_top = 324.0
 offset_right = 286.0
 offset_bottom = 384.0
+text = "Credits"

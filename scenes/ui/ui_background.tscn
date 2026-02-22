@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jjtigtwswflp"]
 
-[ext_resource type="Texture2D" uid="uid://c6irsrcf8qabv" path="res://art/TitleScreenDEMO.png" id="1_nbm7i"]
+[ext_resource type="Texture2D" uid="uid://q5y6w74d411p" path="res://art/TitleScreenFINAL.png" id="1_nbm7i"]
 
 [node name="UiBackground" type="TextureRect" unique_id=452482295]
 anchors_preset = 15
