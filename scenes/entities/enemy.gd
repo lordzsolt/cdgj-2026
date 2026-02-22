@@ -72,6 +72,7 @@ func _physics_process(delta):
 				_last_hit_time_ms = Time.get_ticks_msec()
 				state = RETURN
 				player = null
+				gs.is_chased = false
 
 		RETURN:
 			feather_particle.emitting = true
