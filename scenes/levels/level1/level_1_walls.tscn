@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dilauoeegr7od"]
 
 [ext_resource type="PackedScene" uid="uid://hm3o2foxwd2m" path="res://addons/vision_cone_2d/examples/wall.tscn" id="1_r7qyf"]
-[ext_resource type="PackedScene" path="res://addons/vision_cone_2d/examples/wall-circular.tscn" id="3_h4k4d"]
+[ext_resource type="PackedScene" uid="uid://bynh2a4117bts" path="res://addons/vision_cone_2d/examples/wall-circular.tscn" id="3_h4k4d"]
 
 [node name="Level1 Walls" type="Node2D" unique_id=2108918902]
 

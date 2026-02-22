@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://rl52ecds30is"]
+[gd_scene format=3 uid="uid://bynh2a4117bts"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_okfa2"]
+[ext_resource type="Script" uid="uid://dwntf6g6ibc" path="res://addons/vision_cone_2d/examples/collision_shape_2d.gd" id="1_fowl6"]
 
 [node name="Wall" type="StaticBody2D" unique_id=1285100716]
 collision_layer = 3
@@ -12,4 +12,5 @@ color = Color(0.8, 0.705882, 0.941176, 1)
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1198003037]
-shape = SubResource("CircleShape2D_okfa2")
+position = Vector2(-1, 0)
+script = ExtResource("1_fowl6")
