@@ -14,7 +14,7 @@ static func load_scene(scene: Scene) -> Node:
 		Scene.LEVEL_1:
 			return load("res://scenes/levels/level1_vision/level1_vision.tscn").instantiate()
 		Scene.LEVEL_2:
-			return load("res://scenes/levels/level1_vision/level1_vision.tscn").instantiate()
+			return load("res://scenes/levels/level2_vision/level2_vision.tscn").instantiate()
 		_:
 			db.e("Scene not found: " + Scene.keys()[scene])
 			return null
