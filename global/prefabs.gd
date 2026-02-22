@@ -4,6 +4,7 @@ extends Node
 enum Scene {
 	MAIN_MENU,
 	LEVEL_1,
+	LEVEL_2
 }
 
 static func load_scene(scene: Scene) -> Node:
@@ -11,6 +12,8 @@ static func load_scene(scene: Scene) -> Node:
 		Scene.MAIN_MENU:
 			return load("res://scenes/ui/main_menu/main_menu.tscn").instantiate()
 		Scene.LEVEL_1:
+			return load("res://scenes/levels/level1_vision/level1_vision.tscn").instantiate()
+		Scene.LEVEL_2:
 			return load("res://scenes/levels/level1_vision/level1_vision.tscn").instantiate()
 		_:
 			db.e("Scene not found: " + Scene.keys()[scene])
