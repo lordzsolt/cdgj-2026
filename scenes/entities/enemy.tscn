@@ -31,13 +31,13 @@ unique_name_in_owner = true
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 
-[node name="VisionCone2D" parent="." unique_id=665888346 instance=ExtResource("3_defa4")]
+[node name="visionCone" parent="." unique_id=665888346 instance=ExtResource("3_defa4")]
 rotation = -1.5707964
 angle_deg = 60
 ray_count = 45
 max_distance = 200.0
 
-[connection signal="body_entered" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
-[connection signal="body_exited" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
+[connection signal="body_entered" from="visionCone/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
+[connection signal="body_exited" from="visionCone/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
 
-[editable path="VisionCone2D"]
+[editable path="visionCone"]

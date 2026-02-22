@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 
-@export var speed: float = 150.0;
+@export var speed: float = 200.0;
 @export var run_speed: float = 300.0;
 @export var acc: float = 50.0;
 @export var max_speed: float = 225.0;

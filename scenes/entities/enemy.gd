@@ -1,7 +1,7 @@
 class_name Enemy
 extends CharacterBody2D
 
-enum { PATROL, CHASE, RETURN, HUNT }
+enum { PATROL, CHASE, RETURN, HUNT, PANIC }
 
 enum Type { CHICKEN, ROOSTER }
 
@@ -13,24 +13,28 @@ enum Type { CHICKEN, ROOSTER }
 @export var path: Path2D
 @export var patrol_arrive_dist := 12.0
 @export var detection_grace_period: float = 0.5
+@export var panic_wander_radius: float = 300.0
 
 @onready var agent: NavigationAgent2D = %agent
 @onready var main_character_sprite: AnimatedSprite2D
 @onready var rooster_sprite: AnimatedSprite2D = %roosterSprite
 @onready var chicken_sprite: AnimatedSprite2D = %chickenSprite
+@onready var vision_cone: VisionCone2D = $visionCone
 
 var state := PATROL
 var patrol_points: PackedVector2Array
 var patrol_index := 0
 var detection_timer: SceneTreeTimer
+var _panic_tick: float = 0.0
 
 @onready var player: Player = null
 
 func _ready():
-	patrol_points = _get_patrol_points_world()
-	agent.path_desired_distance = 6.0
-	agent.target_desired_distance = 8.0
-	_set_patrol_target()
+	if path != null:
+		patrol_points = _get_patrol_points_world()
+		agent.path_desired_distance = 6.0
+		agent.target_desired_distance = 8.0
+		_set_patrol_target()
 
 	if type == Type.CHICKEN:
 		main_character_sprite = chicken_sprite
@@ -66,16 +70,39 @@ func _physics_process(delta):
 				state = PATROL
 				agent.target_position = _closest_point_on_patrol(global_position)
 
-		#HUNT:
-			#main_character_sprite.play("run")
-			#agent.target_position = player.global_position
-			#_follow_agent(speed * chase_speed_multiplier)
+		HUNT:
+			main_character_sprite.play("run")
+			agent.target_position = player.global_position
+			_follow_agent(speed * chase_speed_multiplier)
+
+		PANIC:
+			main_character_sprite.play("run")
+			_panic_tick -= delta
+			if _panic_tick <= 0.0:
+				_panic_tick = 1.0
+				var angle := randf_range(0.0, TAU)
+				var dist := randf_range(0.0, panic_wander_radius)
+				agent.target_position = global_position + Vector2(cos(angle), sin(angle)) * dist
+			_follow_agent(speed * chase_speed_multiplier)
+
 
 func _update_state():
-	#if gs.is_chaotic:
-		#player = always_player
-		#state = HUNT
-		#return
+	if gs.is_chaotic:
+		if type == Type.ROOSTER:
+			player = get_tree().get_first_node_in_group("player")
+			if player == null:
+				db.e("Player was not found, nothing in player group.")
+				return
+			state = HUNT
+			return
+		else:
+			vision_cone.angle_deg = 360
+			vision_cone.max_distance = 100
+			vision_cone._angle = deg_to_rad(vision_cone.angle_deg)
+			vision_cone._angle_half = vision_cone._angle / 2.0
+			vision_cone._angular_delta = vision_cone._angle / vision_cone.ray_count
+			vision_cone.recalculate_vision(true)
+			state = PANIC
 
 	match state:
 		PATROL:
@@ -89,8 +116,7 @@ func _update_state():
 
 func _follow_agent(move_speed: float):
 	var direction: Vector2 = (agent.get_next_path_position() - global_position).normalized()
-	var multiplier = 1.75 if gs.is_chaotic else 1
-	velocity = direction * move_speed * multiplier
+	velocity = direction * move_speed
 	if direction != Vector2.ZERO:
 		rotation = direction.angle()
 	move_and_slide()
@@ -103,7 +129,6 @@ func _set_patrol_target():
 
 func _get_patrol_points_world() -> PackedVector2Array:
 	var pts := PackedVector2Array()
-	assert(path != null && path.curve != null)
 	for i in path.curve.point_count:
 		var local_p = path.curve.get_point_position(i)
 		pts.append(path.to_global(local_p))
