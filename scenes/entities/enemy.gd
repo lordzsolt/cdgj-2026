@@ -81,9 +81,11 @@ func _update_state():
 		PATROL:
 			if player != null:
 				state = CHASE
+				gs.is_chased = true
 		CHASE:
 			if player == null:
 				state = RETURN
+				gs.is_chased = false
 
 func _follow_agent(move_speed: float):
 	var direction: Vector2 = (agent.get_next_path_position() - global_position).normalized()
