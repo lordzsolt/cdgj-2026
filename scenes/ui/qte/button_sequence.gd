@@ -9,19 +9,19 @@ signal finished(boolean: bool)
 @onready var timer: Timer = %Timer
 
 var buttonSelection = [
-	{
-		"action": "Q_QTE", 
-		"icon": preload("res://art/keys/Q.png")
-	},
-	{
-		"action": "A_QTE", 
-		"icon": preload("res://art/keys/A.png")
-	},
-	{"action": "W_QTE", "icon": preload("res://art/keys/W.png")},
-	{"action": "E_QTE", "icon": preload("res://art/keys/E.png")},
-	{"action": "R_QTE", "icon": preload("res://art/keys/R.png")},
-	{"action": "T_QTE", "icon": preload("res://art/keys/T.png")},
-	{"action": "Y_QTE", "icon": preload("res://art/keys/Y.png")},
+	#{
+		#"action": "Q_QTE", 
+		#"icon": preload("res://art/keys/Q.png")
+	#},
+	#{
+		#"action": "A_QTE", 
+		#"icon": preload("res://art/keys/A.png")
+	#},
+	{"action": "LEFT_QTE", "icon": preload("res://art/keys/ARROWLEFT.png")},
+	{"action": "UP_QTE", "icon": preload("res://art/keys/ARROWUP.png")},
+	{"action": "DOWN_QTE", "icon": preload("res://art/keys/ARROWDOWN.png")},
+	{"action": "RIGHT_QTE", "icon": preload("res://art/keys/ARROWRIGHT.png")},
+	#{"action": "Y_QTE", "icon": preload("res://art/keys/Y.png")},
 ]
 
 var actionSequence = []
