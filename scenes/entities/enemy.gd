@@ -16,6 +16,7 @@ enum Type { CHICKEN, ROOSTER }
 @export var panic_wander_radius: float = 300.0
 
 @onready var agent: NavigationAgent2D = %agent
+@onready var feather_particle: CPUParticles2D = %featherParticle
 @onready var main_character_sprite: AnimatedSprite2D
 @onready var rooster_sprite: AnimatedSprite2D = %roosterSprite
 @onready var chicken_sprite: AnimatedSprite2D = %chickenSprite
@@ -52,6 +53,7 @@ func _physics_process(delta):
 
 	match state:
 		PATROL:
+			feather_particle.emitting = true
 			main_character_sprite.play("walk")
 			if global_position.distance_to(agent.target_position) <= patrol_arrive_dist:
 				patrol_index = (patrol_index + 1) % patrol_points.size()
@@ -60,22 +62,26 @@ func _physics_process(delta):
 
 		CHASE:
 			assert(player != null)
+			feather_particle.emitting = false
 			main_character_sprite.play("run")
 			agent.target_position = player.global_position
 			_follow_agent(speed * chase_speed_multiplier)
 
 		RETURN:
+			feather_particle.emitting = true
 			_follow_agent(speed)
 			if global_position.distance_to(agent.target_position) <= patrol_arrive_dist:
 				state = PATROL
 				agent.target_position = _closest_point_on_patrol(global_position)
 
 		HUNT:
+			feather_particle.emitting = false
 			main_character_sprite.play("run")
 			agent.target_position = player.global_position
 			_follow_agent(speed * chase_speed_multiplier)
 
 		PANIC:
+			feather_particle.emitting = false
 			main_character_sprite.play("run")
 			_panic_tick -= delta
 			if _panic_tick <= 0.0:

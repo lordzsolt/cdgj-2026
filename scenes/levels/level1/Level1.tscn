@@ -135,7 +135,19 @@ speed = 150
 chase_speed_multiplier = 1.0
 
 [node name="c3" parent="ChaoticEnemies" unique_id=205432574 instance=ExtResource("4_fh0io")]
-position = Vector2(-252, -409)
+position = Vector2(-240.00002, -543)
+rotation = -1.7102073
+speed = 150
+chase_speed_multiplier = 1.0
+
+[node name="c8" parent="ChaoticEnemies" unique_id=130733099 instance=ExtResource("4_fh0io")]
+position = Vector2(-273, -227.99994)
+rotation = -1.7102073
+speed = 150
+chase_speed_multiplier = 1.0
+
+[node name="c9" parent="ChaoticEnemies" unique_id=1876497368 instance=ExtResource("4_fh0io")]
+position = Vector2(-835, 233)
 rotation = -1.7102073
 speed = 150
 chase_speed_multiplier = 1.0
@@ -154,6 +166,12 @@ chase_speed_multiplier = 1.0
 
 [node name="c6" parent="ChaoticEnemies" unique_id=1319079724 instance=ExtResource("4_fh0io")]
 position = Vector2(-350, 413)
+rotation = -1.7102073
+speed = 150
+chase_speed_multiplier = 1.0
+
+[node name="c7" parent="ChaoticEnemies" unique_id=771955800 instance=ExtResource("4_fh0io")]
+position = Vector2(82.99997, -660)
 rotation = -1.7102073
 speed = 150
 chase_speed_multiplier = 1.0

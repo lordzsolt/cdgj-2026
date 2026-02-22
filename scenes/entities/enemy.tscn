@@ -13,7 +13,8 @@ metadata/_custom_type_script = "uid://bvi0kr20kpjhg"
 [node name="agent" type="NavigationAgent2D" parent="." unique_id=1668224642]
 unique_name_in_owner = true
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1101788818]
+[node name="featherParticle" type="CPUParticles2D" parent="." unique_id=1101788818]
+unique_name_in_owner = true
 amount = 10
 texture = ExtResource("5_jr1g6")
 lifetime = 15.0
