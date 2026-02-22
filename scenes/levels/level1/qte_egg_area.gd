@@ -19,7 +19,7 @@ func _on_interact():
 	if not gs.is_chased:
 		var instance: ButtonSequence = button_sequence.instantiate()
 		instance.finished.connect(_on_button_sequence_finished.bind(instance))
-		add_child(instance)
+		get_tree().root.get_child(0).add_child(instance)
 
 func _on_button_sequence_finished(success: bool, instance: Node) -> void:
 	if success:
