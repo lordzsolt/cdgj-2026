@@ -14,5 +14,5 @@ func stealth_music():
 		stealth.play()
 
 func chaos_music():
-	chaos.play()
+	chaos.play(3)
 	stealth.stop()
