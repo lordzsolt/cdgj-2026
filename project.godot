@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg", "res://addons/script-id
 [global_group]
 
 debug_messages=""
+player=""
 
 [gui]
 
