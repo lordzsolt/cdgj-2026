@@ -4,6 +4,8 @@ const button_sequence = preload("res://scenes/ui/qte/buttonSequence.tscn")
 
 @onready var interaction_area = $InteractionArea
 @export var egg : Sprite2D
+@export var stealth_sound : AudioStreamPlayer2D
+@export var chaos_sound : AudioStreamPlayer2D
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
@@ -20,3 +22,7 @@ func _on_button_sequence_finished(success: bool, instance: Node) -> void:
 	instance.queue_free()
 	if egg:
 		egg.visible = false
+	if stealth_sound:
+		stealth_sound.playing = false
+	if chaos_sound:
+		chaos_sound.playing = true

@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://48y17b6062x3" path="res://scenes/levels/level1_vision/level_1_vision.gd" id="1_0wcif"]
 [ext_resource type="Script" uid="uid://bvboknb7ylm4h" path="res://tech-art/Vision/VisionSync.gd" id="2_07mg8"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="2_mjvtq"]
-[ext_resource type="Shader" uid="uid://b1wd26dca20bx" path="res://scenes/levels/level1_vision/StealthShader.gdshader" id="2_pmpup"]
-[ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://scenes/levels/level1_vision/PanicShader.gdshader" id="2_q17aj"]
+[ext_resource type="Shader" uid="uid://b1wd26dca20bx" path="res://tech-art/Vision/StealthShader.gdshader" id="2_pmpup"]
+[ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://tech-art/Vision/PanicShader.gdshader" id="2_q17aj"]
 [ext_resource type="PackedScene" uid="uid://d4ef0p7fvb87p" path="res://scenes/levels/level1/Level1.tscn" id="3_q17aj"]
 [ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level1/level_1_walls.tscn" id="4_mjvtq"]
 [ext_resource type="Texture2D" uid="uid://b4dtmhgrcjaw7" path="res://scenes/levels/level1/Level1.jpg" id="6_nd0lk"]
+[ext_resource type="AudioStream" uid="uid://c4j4gnmkcvbvv" path="res://audio/Tactical Eggstraction - Stealth Song #1.mp3" id="9_pldla"]
+[ext_resource type="AudioStream" uid="uid://cbcfd01vhvawd" path="res://audio/Chicken Chaos Song #1.mp3" id="10_pqgf4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_b2ibo"]
 viewport_path = NodePath("Scene viewport")
@@ -124,6 +126,10 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Level1" parent="Scene viewport" unique_id=1626283689 instance=ExtResource("3_q17aj")]
 
+[node name="QteEggArea" parent="Scene viewport/Level1" index="8" unique_id=303727088 node_paths=PackedStringArray("stealth_sound", "chaos_sound")]
+stealth_sound = NodePath("../../../Stealth")
+chaos_sound = NodePath("../../../Chaos")
+
 [node name="Map viewport" type="SubViewport" parent="." unique_id=1250986769]
 
 [node name="Camera2D" type="Camera2D" parent="Map viewport" unique_id=559800379]
@@ -131,6 +137,19 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map viewport" unique_id=1636523823]
 texture = ExtResource("6_nd0lk")
+
+[node name="Stealth" type="AudioStreamPlayer2D" parent="." unique_id=356111106]
+position = Vector2(4, 0)
+stream = ExtResource("9_pldla")
+volume_db = -17.0
+autoplay = true
+bus = &"Music"
+
+[node name="Chaos" type="AudioStreamPlayer2D" parent="." unique_id=2147091793]
+position = Vector2(4, 0)
+stream = ExtResource("10_pqgf4")
+volume_db = -17.0
+bus = &"Music"
 
 [editable path="Vision viewport/Vision player/VisionCone2D"]
 [editable path="Vision viewport/Vision player/VisionCone2D2"]

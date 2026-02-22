@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc87kndsgjxqn"
+path="res://.godot/imported/Tactical Eggstraction - Song #2.mp3-0ba3d61b8d491d4655ac15a82b0a343a.mp3str"
+
+[deps]
+
+source_file="res://audio/Tactical Eggstraction - Song #2.mp3"
+dest_files=["res://.godot/imported/Tactical Eggstraction - Song #2.mp3-0ba3d61b8d491d4655ac15a82b0a343a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
