@@ -6,7 +6,9 @@ extends Control
 @onready var close_button: Button = %closeButton
 
 func _ready():
-	play_button.button_up.connect(func(): Main.instance.switch_scene(PF.Scene.GAME))
+	play_button.button_up.connect(func():
+		Main.instance.play_game()
+	)
 
 	settings_button.button_up.connect(func(): Main.instance.open_settings())
 

@@ -33,7 +33,7 @@ func can_run() -> bool:
 func is_exhausted() -> bool:
 	if (got_tired):
 		return stamina <= STAMINA_EXHAUSTED_THRESHOLD
-		
+
 	return stamina <= STAMINA_MIN;
 
 func _drain_stamina(delta: float) -> void:
