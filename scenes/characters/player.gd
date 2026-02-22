@@ -28,7 +28,7 @@ var health := 3
 
 func hit():
 	health -= 1
-	print("hit, health now ", health)
+	db.log("hit, health now " + str(health))
 
 func _ready() -> void:
 	health = 3
