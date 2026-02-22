@@ -185,7 +185,7 @@ func _on_vision_cone_area_body_entered(body: Node2D) -> void:
 			return
 		else:
 			print("Not ignoring")
-		
+
 		detection_timer = get_tree().create_timer(detection_grace_period)
 		detection_timer.timeout.connect(_detect_player.bind(body))
 

@@ -176,7 +176,7 @@ speed = 150
 chase_speed_multiplier = 1.0
 
 [node name="Player" parent="." unique_id=1694873845 instance=ExtResource("2_x4si1")]
-position = Vector2(781, -498)
+position = Vector2(811.00006, 552)
 rotation = 5.589639
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
