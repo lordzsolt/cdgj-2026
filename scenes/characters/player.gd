@@ -27,6 +27,15 @@ var _is_running: bool = false;
 @onready var animated_sprite = $MainCharacterSprite
 const JUMP_VELOCITY = -400.0;
 
+var health := 3
+
+func hit():
+	health -= 1
+	print("hit, health now ", health)
+
+func _ready() -> void:
+	health = 3
+
 func can_run() -> bool:
 	return !is_exhausted()
 
