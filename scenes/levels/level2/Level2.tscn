@@ -70,13 +70,13 @@ scale = Vector2(0.09050763, 0.09050763)
 texture = ExtResource("7_xq7co")
 
 [node name="StealthEnemies" type="Node2D" parent="." unique_id=348038307]
+visible = false
 
 [node name="enemy1" type="Node2D" parent="StealthEnemies" unique_id=971952018]
 position = Vector2(-746, -191)
 
 [node name="e1" parent="StealthEnemies/enemy1" unique_id=1609991990 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
 position = Vector2(14, 3)
-type = 1
 path = NodePath("../pp1")
 
 [node name="pp1" type="Path2D" parent="StealthEnemies/enemy1" unique_id=448113827]
@@ -116,14 +116,12 @@ position = Vector2(-88, -227)
 curve = SubResource("Curve2D_m00rq")
 
 [node name="ChaoticEnemies" type="Node2D" parent="." unique_id=334911215]
-visible = false
 
 [node name="enemy1" type="Node2D" parent="ChaoticEnemies" unique_id=165085555]
 position = Vector2(-234, -222)
 
 [node name="e1" parent="ChaoticEnemies/enemy1" unique_id=1136090368 instance=ExtResource("4_j87tk")]
 position = Vector2(14, 3)
-type = 1
 
 [node name="enemy2" type="Node2D" parent="ChaoticEnemies" unique_id=935560976]
 position = Vector2(-480, -194)
@@ -142,6 +140,14 @@ position = Vector2(-577, 702)
 
 [node name="e4" parent="ChaoticEnemies/enemy4" unique_id=1078643914 instance=ExtResource("4_j87tk")]
 position = Vector2(-314, -219)
+
+[node name="enemy5" type="Node2D" parent="ChaoticEnemies" unique_id=20685513]
+position = Vector2(9, -709)
+
+[node name="e4" parent="ChaoticEnemies/enemy5" unique_id=1002870952 instance=ExtResource("4_j87tk")]
+position = Vector2(-314, -219)
+scale = Vector2(2, 2)
+type = 1
 
 [node name="Egg" type="Sprite2D" parent="." unique_id=314661509]
 position = Vector2(903.00006, -638)
