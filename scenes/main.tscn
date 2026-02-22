@@ -18,5 +18,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Overlay" type="CanvasLayer" parent="." unique_id=749708516]
+visible = false
 
 [node name="DebugPanel" parent="Overlay" unique_id=710920525 instance=ExtResource("2_0wfyh")]
+visible = false

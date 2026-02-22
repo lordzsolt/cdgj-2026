@@ -1,9 +1,9 @@
 class_name MainMenu
 extends Control
 
-@onready var play_button: Button = %playButton
-@onready var settings_button: Button = %settingsButton
-@onready var close_button: Button = %closeButton
+@export var play_button: Button
+@export var settings_button: Button
+@export var close_button: Button
 
 func _ready():
 	play_button.button_up.connect(func():

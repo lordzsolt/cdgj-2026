@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ekk2uttnce1i"]
+
+[ext_resource type="Script" uid="uid://loakje0qjc7q" path="res://scenes/ui/main_menu/main_menu.gd" id="1_uqoxc"]
+[ext_resource type="PackedScene" uid="uid://jjtigtwswflp" path="res://scenes/ui/ui_background.tscn" id="2_u2wxu"]
+
+[node name="MainMenu" type="Control" unique_id=1774752075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uqoxc")
+metadata/_custom_type_script = "uid://loakje0qjc7q"
+metadata/_edit_vertical_guides_ = [-1184.0]
+
+[node name="UiBackground" parent="." unique_id=452482295 instance=ExtResource("2_u2wxu")]
+layout_mode = 1
+
+[node name="playButton" type="Button" parent="." unique_id=730990096]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 102.39996
+offset_top = 193.31998
+offset_right = 288.39996
+offset_bottom = 245.31998
+text = " 
+ "
+
+[node name="settingsButton" type="Button" parent="." unique_id=1242781479]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 102.0
+offset_top = 261.0
+offset_right = 288.0
+offset_bottom = 313.0
+text = " 
+ "
+
+[node name="closeButton" type="Button" parent="." unique_id=1032790272]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 101.0
+offset_top = 324.0
+offset_right = 287.0
+offset_bottom = 376.0
+text = " 
+ "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1282858164]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32
+anchor_top = 0.252
+anchor_right = 0.666
+anchor_bottom = 0.752
+offset_left = -307.2
+offset_top = 11.879974
+offset_right = -563.9841
+offset_bottom = -24.63208
+grow_horizontal = 2
+grow_vertical = 2

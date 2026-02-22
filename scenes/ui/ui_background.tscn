@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jjtigtwswflp"]
 
-[ext_resource type="Texture2D" uid="uid://b0w23ffue248n" path="res://art/placeholder/background_by_ansimuz.png" id="1_nbm7i"]
+[ext_resource type="Texture2D" uid="uid://c6irsrcf8qabv" path="res://art/TitleScreenDEMO.png" id="1_nbm7i"]
 
 [node name="UiBackground" type="TextureRect" unique_id=452482295]
 anchors_preset = 15
@@ -9,6 +9,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_nbm7i")
+expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=115726223]
 layout_mode = 1
