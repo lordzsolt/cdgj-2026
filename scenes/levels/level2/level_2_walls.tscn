@@ -81,10 +81,6 @@ scale = Vector2(2.2396717, -1.5702728)
 position = Vector2(25, 263)
 scale = Vector2(-2.1996727, 1.5702728)
 
-[node name="Wall62" parent="." unique_id=1343343094 instance=ExtResource("1_lfgl4")]
-position = Vector2(904.00006, 547)
-scale = Vector2(-3.1196728, 1.5702728)
-
 [node name="Wall60" parent="." unique_id=941093909 instance=ExtResource("1_lfgl4")]
 position = Vector2(-59, 335.00003)
 scale = Vector2(-1.639673, 1.5702728)
@@ -260,11 +256,6 @@ scale = Vector2(11.997254, 12.451078)
 position = Vector2(944.00006, 406.99997)
 rotation = -0.07393244
 scale = Vector2(11.997254, 12.451078)
-
-[node name="Wall63" parent="." unique_id=2061251713 instance=ExtResource("2_xewhe")]
-position = Vector2(988, 608)
-rotation = -0.07393244
-scale = Vector2(2.022077, 2.0985668)
 
 [node name="Wall47" parent="." unique_id=1716700862 instance=ExtResource("2_xewhe")]
 position = Vector2(687.00006, 218.00003)
