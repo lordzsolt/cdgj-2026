@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5bk3sfdoy5ig"
-path="res://.godot/imported/Egg.png-132bb0dd1cd5e7f62b78c2a318ec5561.ctex"
+uid="uid://do7mx73f2hfsb"
+path="res://.godot/imported/Speech3.png-5726c9751e56f093c1c9df170c9cd889.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Egg.png"
-dest_files=["res://.godot/imported/Egg.png-132bb0dd1cd5e7f62b78c2a318ec5561.ctex"]
+source_file="res://art/Speech3.png"
+dest_files=["res://.godot/imported/Speech3.png-5726c9751e56f093c1c9df170c9cd889.ctex"]
 
 [params]
 

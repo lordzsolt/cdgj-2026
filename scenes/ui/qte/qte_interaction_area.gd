@@ -20,6 +20,8 @@ func _on_button_sequence_finished(success: bool, instance: Node) -> void:
 	# TODO: Show
 	gs.is_chaotic = success
 	instance.queue_free()
-	if egg:
-		egg.visible = false
-	GAudio.chaos_music()
+
+	if success:
+		if egg:
+			egg.visible = false
+		GAudio.chaos_music()

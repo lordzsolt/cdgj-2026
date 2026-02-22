@@ -102,11 +102,12 @@ func _physics_process(delta):
 			main_character_sprite.play("run")
 			_panic_tick -= delta
 
-			var player = get_tree().get_first_node_in_group("player")
-			if player != null and global_position.distance_to(player.position) <= hit_distance:
+			if global_position.distance_to(player.position) <= hit_distance:
 				player.hit()
 
-			if _panic_tick <= 0.0:
+			if global_position.distance_to(player.position) < vision_cone.max_distance:
+				agent.target_position = player.global_position
+			elif _panic_tick <= 0.0:
 				_panic_tick = 1.0
 				var angle := randf_range(0.0, TAU)
 				var dist := randf_range(100, panic_wander_radius)
