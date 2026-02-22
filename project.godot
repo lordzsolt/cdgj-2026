@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CDGJ-2026"
-run/main_scene="uid://cw3qfsco6f81d"
+run/main_scene="uid://i2du4wt0hkkh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ GameSettings="*uid://bcrmw447tf1wf"
 db="*uid://17tg8yywba4e"
 EnvUtils="*uid://dd84vt4hyxx0o"
 GAudio="*uid://bmxd6swg3ftct"
+gs="*uid://d26rxbhrtorl0"
 InteractionManager="*uid://bohs2bihgwyix"
 
 [display]

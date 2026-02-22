@@ -11,7 +11,7 @@ static func load_scene(scene: Scene) -> Node:
 		Scene.MAIN_MENU:
 			return load("res://scenes/ui/main_menu/main_menu.tscn").instantiate()
 		Scene.GAME:
-			return load("res://scenes/levels/Level1.tscn").instantiate()
+			return load("res://scenes/levels/level1/Level1.tscn").instantiate()
 		_:
 			db.e("Scene not found: " + Scene.keys()[scene])
 			return null

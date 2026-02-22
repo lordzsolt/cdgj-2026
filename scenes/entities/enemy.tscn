@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c5d7e1fvayvqn"]
 
 [ext_resource type="Script" uid="uid://ctrsybtk2gkpi" path="res://scenes/entities/enemy.gd" id="1_defa4"]
-[ext_resource type="PackedScene" uid="uid://c00754xjrrsn4" path="res://tech-art/CharacterSprite/ChickenSprite.tscn" id="2_ktqfp"]
+[ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/ChickenSprite.tscn" id="2_ktqfp"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="3_defa4"]
-[ext_resource type="PackedScene" uid="uid://cijc780e8ap12" path="res://tech-art/CharacterSprite/RoosterSprite.tscn" id="3_jr1g6"]
+[ext_resource type="PackedScene" path="res://tech-art/CharacterSprite/RoosterSprite.tscn" id="3_jr1g6"]
 [ext_resource type="Texture2D" uid="uid://c2fuyvr7jxoq4" path="res://tech-art/feather-trail/feather.png" id="5_jr1g6"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1609991990]

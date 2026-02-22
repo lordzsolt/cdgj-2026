@@ -21,16 +21,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var current_size := DisplayServer.window_get_size()
-	
+
 	level_viewport.size = current_size
 	view_viewport.size = current_size
 	map_viewport.size = current_size
-	
+
 	var scale_factor := current_size.y / original_resolution.y
 	var final_zoom = original_zoom * scale_factor
 	level_camera.zoom = final_zoom
 	view_camera.zoom = final_zoom
 	map_camera.zoom = final_zoom
-	
+
 	view_player.transform = level_player.transform
 	map_player.transform = level_player.transform

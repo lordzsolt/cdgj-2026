@@ -1,7 +1,7 @@
 class_name Enemy
 extends CharacterBody2D
 
-enum { PATROL, CHASE, RETURN }
+enum { PATROL, CHASE, RETURN, HUNT }
 
 enum Type { CHICKEN, ROOSTER }
 
@@ -17,6 +17,8 @@ enum Type { CHICKEN, ROOSTER }
 @onready var main_character_sprite: AnimatedSprite2D
 @onready var rooster_sprite: AnimatedSprite2D = %roosterSprite
 @onready var chicken_sprite: AnimatedSprite2D = %chickenSprite
+
+@onready var always_player: Player = $"../../../Player"
 
 var state := PATROL
 var patrol_points: PackedVector2Array
@@ -64,20 +66,29 @@ func _physics_process(delta):
 				state = PATROL
 				agent.target_position = _closest_point_on_patrol(global_position)
 
+		#HUNT:
+			#main_character_sprite.play("run")
+			#agent.target_position = player.global_position
+			#_follow_agent(speed * chase_speed_multiplier)
+
 func _update_state():
+	#if gs.is_chaotic:
+		#player = always_player
+		#state = HUNT
+		#return
+
 	match state:
 		PATROL:
 			if player != null:
 				state = CHASE
-
-
 		CHASE:
 			if player == null:
 				state = RETURN
 
 func _follow_agent(move_speed: float):
 	var direction: Vector2 = (agent.get_next_path_position() - global_position).normalized()
-	velocity = direction * move_speed
+	var multiplier = 1.75 if gs.is_chaotic else 1
+	velocity = direction * move_speed * multiplier
 	if direction != Vector2.ZERO:
 		rotation = direction.angle()
 	move_and_slide()
