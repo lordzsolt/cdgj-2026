@@ -8,8 +8,6 @@ enum Type { CHICKEN, ROOSTER }
 @export var type: Type
 @export var speed := 100
 @export var chase_speed_multiplier = 1.5
-@export var aggro_range := 250.0
-@export var lose_range := 320.0
 @export var path: Path2D
 @export var patrol_arrive_dist := 12.0
 @export var detection_grace_period: float = 0.5
@@ -87,7 +85,7 @@ func _physics_process(delta):
 			if _panic_tick <= 0.0:
 				_panic_tick = 1.0
 				var angle := randf_range(0.0, TAU)
-				var dist := randf_range(0.0, panic_wander_radius)
+				var dist := randf_range(100, panic_wander_radius)
 				agent.target_position = global_position + Vector2(cos(angle), sin(angle)) * dist
 			_follow_agent(speed * chase_speed_multiplier)
 
