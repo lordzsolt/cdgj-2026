@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d1m4syw57glrl"]
+
+[ext_resource type="Script" uid="uid://rlpn0dl4nwkf" path="res://scenes/levels/test_level_f/qte_interaction_area.gd" id="1_61lsw"]
+[ext_resource type="PackedScene" uid="uid://s30nlwxa1iq4" path="res://scenes/entities/interaction_area.tscn" id="1_i4xnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_61lsw"]
+radius = 42.190044
+
+[node name="QteInteractionArea" type="Node2D" unique_id=1897005090]
+script = ExtResource("1_61lsw")
+
+[node name="InteractionArea" parent="." unique_id=344198781 instance=ExtResource("1_i4xnw")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1905132850]
+shape = SubResource("CircleShape2D_61lsw")

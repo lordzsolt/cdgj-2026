@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d4ef0p7fvb87p"]
 
-[ext_resource type="Texture2D" uid="uid://crx4nhxe8qcbu" path="res://scenes/levels/Level1.jpg" id="1_j08sa"]
+[ext_resource type="Texture2D" uid="uid://crx4nhxe8qcbu" path="res://scenes/levels/level1/Level1.jpg" id="1_j08sa"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="2_x4si1"]
-[ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level_1_walls.tscn" id="3_fh0io"]
+[ext_resource type="PackedScene" uid="uid://dilauoeegr7od" path="res://scenes/levels/level1/level_1_walls.tscn" id="3_fh0io"]
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_fh0io"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fh0io"]

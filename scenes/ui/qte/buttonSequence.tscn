@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://che4c436gflll"]
+
+[ext_resource type="Script" uid="uid://bb2xkvlf8t7wc" path="res://scenes/ui/qte/button_sequence.gd" id="1_ye2xd"]
+[ext_resource type="Texture2D" uid="uid://bopl6leim7ndc" path="res://art/keys/Q-Key.png" id="2_8fwjc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn1mu"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="ButtonSequence" type="CanvasLayer" unique_id=962817119]
+process_mode = 3
+script = ExtResource("1_ye2xd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=384792442]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -375.0
+offset_right = 375.0
+offset_bottom = 217.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 50
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1829664053]
+visible = false
+layout_mode = 2
+color = Color(0.486275, 0.486275, 0.486275, 0.588235)
+
+[node name="PanelContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=278177561]
+layout_mode = 2
+
+[node name="timeLabel" type="Label" parent="MarginContainer/PanelContainer2" unique_id=119239469]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 70
+text = "2:30"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer2" unique_id=1156514284]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sn1mu")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer2/PanelContainer" unique_id=55796778]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="buttonBox" type="HBoxContainer" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer" unique_id=1768151224]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=1022867175]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("2_8fwjc")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=1182701964]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("2_8fwjc")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=2057369725]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("2_8fwjc")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=715289288]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("2_8fwjc")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/PanelContainer2/PanelContainer/MarginContainer/buttonBox" unique_id=577940709]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("2_8fwjc")
+expand_mode = 1
+
+[node name="successLabel" type="Label" parent="MarginContainer" unique_id=1907474350]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 100
+text = "fail"
+
+[node name="Timer" type="Timer" parent="MarginContainer" unique_id=3050480]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="MarginContainer/Timer" to="." method="_on_timer_timeout"]
