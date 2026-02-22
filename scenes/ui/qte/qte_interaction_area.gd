@@ -11,7 +11,7 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	if not gs.is_chased:
+	if !gs.is_chased && !gs.is_chaotic:
 		var instance: ButtonSequence = button_sequence.instantiate()
 		instance.finished.connect(_on_button_sequence_finished.bind(instance))
 		get_tree().root.get_child(0).add_child(instance)
