@@ -141,6 +141,12 @@ position = Vector2(-577, 702)
 [node name="e4" parent="ChaoticEnemies/enemy4" unique_id=1078643914 instance=ExtResource("4_j87tk")]
 position = Vector2(-314, -219)
 
+[node name="enemy6" type="Node2D" parent="ChaoticEnemies" unique_id=1820009104]
+position = Vector2(-464, -34)
+
+[node name="e4" parent="ChaoticEnemies/enemy6" unique_id=1121189415 instance=ExtResource("4_j87tk")]
+position = Vector2(-314, -219)
+
 [node name="enemy5" type="Node2D" parent="ChaoticEnemies" unique_id=20685513]
 position = Vector2(9, -709)
 
