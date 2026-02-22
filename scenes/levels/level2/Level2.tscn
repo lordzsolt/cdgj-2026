@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_j87tk"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="5_eaecy"]
 [ext_resource type="Texture2D" uid="uid://bd0q7lw2qqeld" path="res://art/SafeStone.png" id="6_nk2dm"]
-[ext_resource type="Texture2D" uid="uid://b5bk3sfdoy5ig" path="res://art/EGG.png" id="7_uwb11"]
+[ext_resource type="Texture2D" uid="uid://b5bk3sfdoy5ig" path="res://art/Egg.png" id="7_uwb11"]
 [ext_resource type="Texture2D" uid="uid://curweg2840id5" path="res://art/NPCWeasel.png" id="7_xq7co"]
 [ext_resource type="Script" uid="uid://hrwp4ysgic26" path="res://scenes/ui/qte/qte_interaction_area.gd" id="8_uq02b"]
 [ext_resource type="PackedScene" uid="uid://s30nlwxa1iq4" path="res://scenes/ui/qte/interaction_area.tscn" id="9_uwb11"]
@@ -121,31 +121,27 @@ visible = false
 [node name="enemy1" type="Node2D" parent="ChaoticEnemies" unique_id=165085555]
 position = Vector2(-234, -222)
 
-[node name="e1" parent="ChaoticEnemies/enemy1" unique_id=1136090368 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e1" parent="ChaoticEnemies/enemy1" unique_id=1136090368 instance=ExtResource("4_j87tk")]
 position = Vector2(14, 3)
 type = 1
-path = NodePath("")
 
 [node name="enemy2" type="Node2D" parent="ChaoticEnemies" unique_id=935560976]
 position = Vector2(-480, -194)
 
-[node name="e2" parent="ChaoticEnemies/enemy2" unique_id=2038272545 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e2" parent="ChaoticEnemies/enemy2" unique_id=2038272545 instance=ExtResource("4_j87tk")]
 position = Vector2(435, 686)
-path = NodePath("")
 
 [node name="enemy3" type="Node2D" parent="ChaoticEnemies" unique_id=891066770]
 position = Vector2(-605, -724)
 
-[node name="e3" parent="ChaoticEnemies/enemy3" unique_id=1156944946 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e3" parent="ChaoticEnemies/enemy3" unique_id=1156944946 instance=ExtResource("4_j87tk")]
 position = Vector2(428, 118)
-path = NodePath("")
 
 [node name="enemy4" type="Node2D" parent="ChaoticEnemies" unique_id=685061427]
 position = Vector2(-577, 702)
 
-[node name="e4" parent="ChaoticEnemies/enemy4" unique_id=1078643914 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e4" parent="ChaoticEnemies/enemy4" unique_id=1078643914 instance=ExtResource("4_j87tk")]
 position = Vector2(-314, -219)
-path = NodePath("")
 
 [node name="Egg" type="Sprite2D" parent="." unique_id=314661509]
 position = Vector2(903.00006, -638)

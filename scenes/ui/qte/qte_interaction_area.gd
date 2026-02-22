@@ -22,7 +22,4 @@ func _on_button_sequence_finished(success: bool, instance: Node) -> void:
 	instance.queue_free()
 	if egg:
 		egg.visible = false
-	if stealth_sound:
-		stealth_sound.playing = false
-	if chaos_sound:
-		chaos_sound.playing = true
+	GAudio.chaos_music()

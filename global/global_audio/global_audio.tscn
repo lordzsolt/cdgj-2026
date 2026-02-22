@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cjo7vk77qa16" path="res://global/global_audio/global_audio.gd" id="1_aakte"]
 [ext_resource type="AudioStream" uid="uid://thl7i6uugsy" path="res://audio/sfx/plop.wav" id="2_5nr8x"]
+[ext_resource type="AudioStream" uid="uid://c4j4gnmkcvbvv" path="res://audio/Tactical Eggstraction - Stealth Song #1.mp3" id="3_amuxc"]
+[ext_resource type="AudioStream" uid="uid://cbcfd01vhvawd" path="res://audio/Chicken Chaos Song #1.mp3" id="4_k56kh"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_amuxc"]
 random_pitch = 1.005793
@@ -16,3 +18,18 @@ unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_amuxc")
 pitch_scale = 2.0
 bus = &"SFX"
+
+[node name="Stealth" type="AudioStreamPlayer" parent="." unique_id=346207819]
+unique_name_in_owner = true
+stream = ExtResource("3_amuxc")
+volume_db = -30.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Chaos" type="AudioStreamPlayer" parent="." unique_id=672461100]
+unique_name_in_owner = true
+stream = ExtResource("4_k56kh")
+volume_db = -30.0
+bus = &"Music"
+parameters/looping = true

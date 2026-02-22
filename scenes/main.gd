@@ -99,6 +99,10 @@ func show_defeat():
 	switch_scene(PF.Scene.DEFEAT_SCENE)
 
 func switch_scene(scene: PF.Scene):
+	match scene:
+		PF.Scene.MAIN_MENU, PF.Scene.LEVEL_1, PF.Scene.LEVEL_2:
+			GAudio.stealth_music()
+
 	is_paused = false
 
 	if _active_scene:
