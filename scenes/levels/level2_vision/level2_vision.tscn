@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://dvhf2f60l4gge"]
+
+[ext_resource type="Script" uid="uid://48y17b6062x3" path="res://scenes/levels/level1_vision/level_1_vision.gd" id="1_x7lv1"]
+[ext_resource type="Shader" uid="uid://b1wd26dca20bx" path="res://tech-art/Vision/StealthShader.gdshader" id="2_wrbn2"]
+[ext_resource type="Shader" uid="uid://cn7omqnacbyuc" path="res://tech-art/Vision/PanicShader.gdshader" id="3_jce5i"]
+[ext_resource type="Script" uid="uid://bvboknb7ylm4h" path="res://tech-art/Vision/VisionSync.gd" id="4_5h632"]
+[ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="5_6tgf8"]
+[ext_resource type="PackedScene" uid="uid://cte1eoxee1g8l" path="res://scenes/levels/level2/level_2_walls.tscn" id="6_gciop"]
+[ext_resource type="PackedScene" uid="uid://bu273f6x3c3k7" path="res://scenes/levels/level2/Level2.tscn" id="7_uog1l"]
+[ext_resource type="Texture2D" uid="uid://cn3tcbosg8nko" path="res://scenes/levels/level2/Level2.jpg" id="8_mb3se"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b2ibo"]
+viewport_path = NodePath("Scene viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vmk5"]
+viewport_path = NodePath("Map viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xiha2"]
+viewport_path = NodePath("Vision viewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aav2g"]
+resource_local_to_scene = true
+shader = ExtResource("2_wrbn2")
+shader_parameter/level_texture = SubResource("ViewportTexture_b2ibo")
+shader_parameter/vision_texture = SubResource("ViewportTexture_xiha2")
+shader_parameter/map_texture = SubResource("ViewportTexture_5vmk5")
+shader_parameter/darkness = 0.3
+
+[sub_resource type="Gradient" id="Gradient_qrkaj"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b2ibo"]
+gradient = SubResource("Gradient_qrkaj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrkaj"]
+resource_local_to_scene = true
+shader = ExtResource("3_jce5i")
+shader_parameter/level_texture = SubResource("ViewportTexture_b2ibo")
+shader_parameter/vignette_size = 0.5
+shader_parameter/vignette_smoothness = 0.5
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_intensity = 0.1
+
+[node name="Level2_Vision" type="Control" unique_id=1553908456 node_paths=PackedStringArray("stealth_texture", "stealth_enemies", "chaotic_texture", "chaotic_enemies")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7lv1")
+stealth_texture = NodePath("TextureRect Stealth")
+stealth_enemies = NodePath("Scene viewport/Level2/StealthEnemies")
+chaotic_texture = NodePath("TextureRect Panic")
+chaotic_enemies = NodePath("Scene viewport/Level2/ChaoticEnemies")
+
+[node name="TextureRect Stealth" type="TextureRect" parent="." unique_id=1571193238]
+visible = false
+material = SubResource("ShaderMaterial_aav2g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_b2ibo")
+
+[node name="TextureRect Panic" type="TextureRect" parent="." unique_id=342990256]
+visible = false
+material = SubResource("ShaderMaterial_qrkaj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_b2ibo")
+
+[node name="VisionSync" type="Node" parent="." unique_id=268826139 node_paths=PackedStringArray("level_camera", "view_camera", "map_camera", "level_viewport", "view_viewport", "map_viewport", "level_player", "view_player", "map_player")]
+script = ExtResource("4_5h632")
+level_camera = NodePath("../Scene viewport/Level2/Player/Camera2D")
+view_camera = NodePath("../Vision viewport/Vision player/Camera2D")
+map_camera = NodePath("../Map viewport/Camera2D")
+level_viewport = NodePath("../Scene viewport")
+view_viewport = NodePath("../Vision viewport")
+map_viewport = NodePath("../Map viewport")
+level_player = NodePath("../Scene viewport/Level2/Player")
+view_player = NodePath("../Vision viewport/Vision player")
+map_player = NodePath("../Map viewport/Camera2D")
+original_zoom = Vector2(0.7, 0.7)
+
+[node name="Vision viewport" type="SubViewport" parent="." unique_id=1269793411]
+
+[node name="Vision player" type="Node2D" parent="Vision viewport" unique_id=635430032]
+scale = Vector2(33.076927, 33.076923)
+
+[node name="VisionCone2D" parent="Vision viewport/Vision player" unique_id=461109295 instance=ExtResource("5_6tgf8")]
+position = Vector2(0, -20)
+rotation = 3.1415927
+scale = Vector2(1, 0.9999998)
+angle_deg = 70
+ray_count = 80
+max_distance = 1000.0
+
+[node name="VisionConeRenderer" parent="Vision viewport/Vision player/VisionCone2D" index="0"]
+color = Color(0.9647059, 1, 1, 1)
+
+[node name="VisionCone2D2" parent="Vision viewport/Vision player" unique_id=1303112355 instance=ExtResource("5_6tgf8")]
+position = Vector2(0, -20)
+rotation = 3.1415927
+scale = Vector2(1, 0.9999998)
+ray_count = 45
+max_distance = 150.0
+
+[node name="VisionConeRenderer" parent="Vision viewport/Vision player/VisionCone2D2" index="0"]
+color = Color(0.9647059, 1, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Vision viewport/Vision player" unique_id=1206366586]
+scale = Vector2(1, 0.9999997)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Level2 Walls" parent="Vision viewport" unique_id=2108918902 instance=ExtResource("6_gciop")]
+
+[node name="Scene viewport" type="SubViewport" parent="." unique_id=1695732986]
+
+[node name="Level2" parent="Scene viewport" unique_id=1626283689 instance=ExtResource("7_uog1l")]
+
+[node name="Map viewport" type="SubViewport" parent="." unique_id=1250986769]
+
+[node name="Camera2D" type="Camera2D" parent="Map viewport" unique_id=559800379]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Map viewport" unique_id=1636523823]
+texture = ExtResource("8_mb3se")
+
+[editable path="Vision viewport/Vision player/VisionCone2D"]
+[editable path="Vision viewport/Vision player/VisionCone2D2"]
+[editable path="Scene viewport/Level2"]

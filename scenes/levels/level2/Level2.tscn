@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bu273f6x3c3k7"]
 
-[ext_resource type="Script" uid="uid://bncyqus2c7jhy" path="res://scenes/levels/level1/level_1.gd" id="1_k6vdr"]
+[ext_resource type="Script" uid="uid://cji1kuronkhwv" path="res://scenes/levels/level2/level_2.gd" id="1_uq02b"]
 [ext_resource type="Texture2D" uid="uid://cn3tcbosg8nko" path="res://scenes/levels/level2/Level2.jpg" id="2_nk2dm"]
 [ext_resource type="PackedScene" uid="uid://cte1eoxee1g8l" path="res://scenes/levels/level2/level_2_walls.tscn" id="3_xq7co"]
 [ext_resource type="PackedScene" uid="uid://c5d7e1fvayvqn" path="res://scenes/entities/enemy.tscn" id="4_j87tk"]
 [ext_resource type="PackedScene" uid="uid://cpkstcf6exa0s" path="res://scenes/characters/player.tscn" id="5_eaecy"]
 [ext_resource type="Texture2D" uid="uid://bd0q7lw2qqeld" path="res://art/SafeStone.png" id="6_nk2dm"]
 [ext_resource type="Texture2D" uid="uid://curweg2840id5" path="res://art/NPCWeasel.png" id="7_xq7co"]
+[ext_resource type="Script" uid="uid://hrwp4ysgic26" path="res://scenes/ui/qte/qte_interaction_area.gd" id="8_uq02b"]
+[ext_resource type="PackedScene" uid="uid://s30nlwxa1iq4" path="res://scenes/ui/qte/interaction_area.tscn" id="9_uwb11"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fh0io"]
 vertices = PackedVector2Array(135.4375, 841.96094, 138.40625, 851.46875, 40.617188, 840.8906, -308.92188, 794.8672, -184.52344, 816.5625, -405.2578, 792.6875, -243.70313, -627.7969, -53.296875, -564.78906, -67.296875, -564.78906, -432.4922, -606.40625, -276.29688, -627.7969, -447.29688, -485.9922, -446.29688, -485.9922, -446.29688, -245.17969, -447.70313, -245.17969, -602.8281, -287.78906, -634.75, -376.25, -654.7031, -232.79688, -654.7031, -292.39063, -647.25, -271.75, 63.09375, -892.21094, 63.09375, -17.65625, 48.359375, -27.117188, -20.703125, -169.60938, -20.703125, -306.39063, -317.03125, 549, 626.14844, 526.5625, 670.4297, 552.64844, -325.39844, 593.6719, -102.703125, -768.21094, -2.90625, -892.21094, -20.703125, -665.3906, -53.296875, -665.3906, -102.703125, -909.78906, -2.90625, -983.8125, 26.203125, -31.351563, 594.8672, 485.0625, -196.10156, -483.9922, -143.04688, -483.9922, -151.60938, -471.70313, -27.609375, 46.703125, -19.75, 57.992188, -190.10156, 57.992188, -517.7031, 106.99219, -584.0781, 106.99219, -579.0078, 99.703125, 685.78906, 554.6406, 608.7578, 641.22656, 604.03906, 636.3125, -654.96875, 25.882813, -663.09375, 31.09375, -663.09375, -134.99219, -75.640625, -397.8828, -67.296875, -403.22656, -67.296875, -271.21094, -935.0703, 707, -932.0781, 721.71875, -1022.0625, 706.03125, -1022.8281, 375.28906, 590.14844, 320.5625, 614.47656, 334.89063, 612.09375, 336.82813, 454.25, 684.03906, 453.89844, 687.96094, 388.97656, 657.0078, -654.7031, -369.03906, -654.7031, -395.20313, -196.10156, -395.0078, -156.09375, -450, -151.60938, -428.29688, 581.2422, 434.5, -325.39844, 504.32813, 471.96875, 150.46094, 551.7031, 175.67188, 551.27344, 176.47656, -274.0078, 765.34375, -619.6875, 757.5, -609.46094, 707, -473.96094, -983.8125, -135.29688, -909.78906, -411.70313, -931.2031, 4.03125, -27.117188, -53.296875, -169.60938, -632.7969, 21.648438, -32.09375, 25, -190.10156, -23.992188, -97.796875, -393.64844, -27.609375, 3.296875, -574.52344, 78, -708.40625, 292.6328, -706.90625, 292.52344, -706.90625, 304.9922, -736.25, 335.14844, -411.70313, -768.7969, -278.29688, -802.0078, -278.29688, -761.9922, -432.4922, -697.59375, -138.86719, -410.0078, -318.29688, -173.17969, -318.29688, -214.82031, -135.29688, -802.0078, -444.29688, -931.2031, -444.29688, -810.0078, -592.2969, -810.0078, -662.09375, -983.0625, -592.2969, -769.9922, -444.29688, -769.9922, -444.29688, -768.7969, -559.5078, -697.59375, -276.29688, -761.9922, -243.70313, -761.9922, -109.703125, -761.9922, -109.703125, -768.21094, -34.703125, -306.39063, -34.703125, -528.6094, -20.703125, -528.6094, -67.296875, -524.0078, -222.71094, -524.0078, -278.70313, -526.0078, -222.71094, -518.9922, -223.89844, -518.9922, -278.10156, -395.0078, -223.89844, -395.0078, -318.29688, -245.17969, -278.10156, -518.9922, -278.70313, -518.9922, -413.70313, -245.17969, -413.70313, -420.59375, -305.89844, -420.59375, -305.89844, -395.0078, -53.296875, -271.21094, -217.89844, -23.992188, -318.29688, -142.82031, -217.89844, 99.99219, -268.10156, 99.99219, -268.10156, -23.992188, -295.89844, -23.992188, -295.89844, 61.992188, -410.70313, 61.992188, -410.70313, -142.82031, -447.70313, -142.82031, -443.29688, -142.82031, -443.29688, -133.39063, -539.90625, -133.39063, -579.0078, 56.296875, -591.7422, 38.007813, -539.90625, -48.609375, -443.29688, -48.609375, -443.29688, 102.00781, -274.70313, 102.00781, -274.70313, 99.99219, -125.90625, 271.8125, -190.10156, 99.99219, -190.10156, 98.00781, 63.09375, 98.00781, 63.09375, 221.59375, -28.992188, 221.59375, -28.992188, 271.8125, -125.90625, 318.1875, -101.796875, 318.1875, -101.796875, 376.40625, -16.203125, 376.40625, -16.203125, 318.1875, 63.09375, 318.1875, 63.09375, 320.9922, -688.2969, 304.9922, -688.2969, 314.1875, -710.02344, 559.25, -279.70313, 267.8125, -575.2031, 267.8125, -575.2031, 210.59375, -517.7031, 147.00781, -663.09375, 210.59375, -663.09375, 147.00781, -447.70313, -214.82031, -447.70313, -173.17969, -670.7031, -134.99219, -670.7031, -135.1875, -867.09375, -135.1875, -867.09375, -365.40625, -777.7031, -365.40625, -687.2969, -232.79688, -777.7031, -485.8125, -668.7031, -485.8125, -687.2969, -395.20313, -668.7031, -489.21094, -662.09375, -489.21094, -922.64844, 645.75, -887.3203, 593.8672, -1004.03125, 372.28906, -834.5, 559.25, -966.65625, 352.3125, -933.2422, 375.1172, -864.03906, 389.15625, -772.2578, 547.10156, -794.85156, 375.1172, 545.2422, 228.5, 106.90625, 320.9922, 106.90625, 119.25781, 237.70313, 114.390625, -447.29688, -526.0078, -559.5078, -606.40625, 471.3203, 653.4531, 587.27344, 382.46875, 142.52344, 766.03125, 135.39844, 811.6328, -47.953125, 809.5625, 180.96875, 708.5703, -274.10156, 770.14844, 241.25781, 667.96094, -14.8671875, -14.9921875, 558.8672, 279.0625, -349.34375, 466.32813, 571.0781, 621.8281, -279.70313, 314.1875, -470.78906, 440.78125, -621.8672, 645.75, -610.6406, 25.882813, -119.96875, -397.8828, -349.34375, 631.6719, 534.46875, 620.02344, 499.52344, 631.0703, 314.1875, 649.9297, -657.2031, 593.8672, -470.78906, 657.21875, -385.39063, 440.78125, -428.09375, 431.77344, -506.84375, 466.32813, -530.78125, 504.32813, -539.14844, 549, -530.78125, 593.6719, -506.84375, 631.6719, -428.09375, 666.22656, -385.39063, 657.21875)
@@ -38,8 +40,14 @@ _data = {
 }
 point_count = 13
 
-[node name="Level1" type="Node2D" unique_id=1626283689]
-script = ExtResource("1_k6vdr")
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqpen"]
+radius = 131.01526
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl2in"]
+size = Vector2(307, 191)
+
+[node name="Level2" type="Node2D" unique_id=1626283689]
+script = ExtResource("1_uq02b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1361002411]
 texture = ExtResource("2_nk2dm")
@@ -60,51 +68,83 @@ rotation = 0.5852083
 scale = Vector2(0.09050763, 0.09050763)
 texture = ExtResource("7_xq7co")
 
-[node name="Enemies" type="Node2D" parent="." unique_id=348038307]
+[node name="StealthEnemies" type="Node2D" parent="." unique_id=348038307]
 
-[node name="enemy1" type="Node2D" parent="Enemies" unique_id=971952018]
+[node name="enemy1" type="Node2D" parent="StealthEnemies" unique_id=971952018]
 position = Vector2(-746, -191)
 
-[node name="e1" parent="Enemies/enemy1" unique_id=1609991990 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e1" parent="StealthEnemies/enemy1" unique_id=1609991990 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
 position = Vector2(14, 3)
 type = 1
 path = NodePath("../pp1")
 
-[node name="pp1" type="Path2D" parent="Enemies/enemy1" unique_id=448113827]
+[node name="pp1" type="Path2D" parent="StealthEnemies/enemy1" unique_id=448113827]
 position = Vector2(8, 1)
 curve = SubResource("Curve2D_fh0io")
 
-[node name="enemy2" type="Node2D" parent="Enemies" unique_id=1350801455]
+[node name="enemy2" type="Node2D" parent="StealthEnemies" unique_id=1350801455]
 position = Vector2(-480, -194)
 
-[node name="e2" parent="Enemies/enemy2" unique_id=452866787 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e2" parent="StealthEnemies/enemy2" unique_id=452866787 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
 position = Vector2(3, -3)
 path = NodePath("../pp2")
 
-[node name="pp2" type="Path2D" parent="Enemies/enemy2" unique_id=932144954]
+[node name="pp2" type="Path2D" parent="StealthEnemies/enemy2" unique_id=932144954]
 position = Vector2(20, 17)
 curve = SubResource("Curve2D_68ib6")
 
-[node name="enemy3" type="Node2D" parent="Enemies" unique_id=841760541]
+[node name="enemy3" type="Node2D" parent="StealthEnemies" unique_id=841760541]
 position = Vector2(-605, -724)
 
-[node name="e3" parent="Enemies/enemy3" unique_id=1314729488 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e3" parent="StealthEnemies/enemy3" unique_id=1314729488 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
 position = Vector2(4, 1)
 path = NodePath("../pp3")
 
-[node name="pp3" type="Path2D" parent="Enemies/enemy3" unique_id=723069944]
+[node name="pp3" type="Path2D" parent="StealthEnemies/enemy3" unique_id=723069944]
 curve = SubResource("Curve2D_76cw8")
 
-[node name="enemy4" type="Node2D" parent="Enemies" unique_id=1230916982]
+[node name="enemy4" type="Node2D" parent="StealthEnemies" unique_id=1230916982]
 position = Vector2(-577, 702)
 
-[node name="e4" parent="Enemies/enemy4" unique_id=1799780883 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+[node name="e4" parent="StealthEnemies/enemy4" unique_id=1799780883 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
 position = Vector2(4, -32)
 path = NodePath("../pp4")
 
-[node name="pp4" type="Path2D" parent="Enemies/enemy4" unique_id=1650059935]
+[node name="pp4" type="Path2D" parent="StealthEnemies/enemy4" unique_id=1650059935]
 position = Vector2(-88, -227)
 curve = SubResource("Curve2D_m00rq")
+
+[node name="ChaoticEnemies" type="Node2D" parent="." unique_id=334911215]
+visible = false
+
+[node name="enemy1" type="Node2D" parent="ChaoticEnemies" unique_id=165085555]
+position = Vector2(-234, -222)
+
+[node name="e1" parent="ChaoticEnemies/enemy1" unique_id=1136090368 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+position = Vector2(14, 3)
+type = 1
+path = NodePath("")
+
+[node name="enemy2" type="Node2D" parent="ChaoticEnemies" unique_id=935560976]
+position = Vector2(-480, -194)
+
+[node name="e2" parent="ChaoticEnemies/enemy2" unique_id=2038272545 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+position = Vector2(435, 686)
+path = NodePath("")
+
+[node name="enemy3" type="Node2D" parent="ChaoticEnemies" unique_id=891066770]
+position = Vector2(-605, -724)
+
+[node name="e3" parent="ChaoticEnemies/enemy3" unique_id=1156944946 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+position = Vector2(428, 118)
+path = NodePath("")
+
+[node name="enemy4" type="Node2D" parent="ChaoticEnemies" unique_id=685061427]
+position = Vector2(-577, 702)
+
+[node name="e4" parent="ChaoticEnemies/enemy4" unique_id=1078643914 node_paths=PackedStringArray("path") instance=ExtResource("4_j87tk")]
+position = Vector2(-314, -219)
+path = NodePath("")
 
 [node name="Player" parent="." unique_id=1694873845 instance=ExtResource("5_eaecy")]
 position = Vector2(881.99994, 671)
@@ -113,3 +153,24 @@ rotation = 0.2679689
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=105960617]
 position = Vector2(0, 1)
 zoom = Vector2(0.5, 0.5)
+
+[node name="QteEggArea" type="Node2D" parent="." unique_id=993471863]
+position = Vector2(-558, -905)
+scale = Vector2(0.8782462, 0.7697178)
+script = ExtResource("8_uq02b")
+
+[node name="InteractionArea" parent="QteEggArea" unique_id=344198781 instance=ExtResource("9_uwb11")]
+unique_name_in_owner = true
+action_name = "get the eggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QteEggArea/InteractionArea" unique_id=640699677]
+shape = SubResource("CircleShape2D_wqpen")
+
+[node name="SuccessArea" type="Area2D" parent="." unique_id=1706891573]
+position = Vector2(847, 601)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuccessArea" unique_id=1874640378]
+position = Vector2(40.5, 48.5)
+shape = SubResource("RectangleShape2D_jl2in")
+
+[connection signal="body_entered" from="SuccessArea" to="." method="_on_success_area_body_entered"]
