@@ -225,6 +225,13 @@ position = Vector2(825, 500)
 position = Vector2(40.5, 48.5)
 shape = SubResource("RectangleShape2D_jp1f7")
 
+[node name="Label" type="Label" parent="." unique_id=1550919115]
+offset_left = 820.0
+offset_top = -634.0
+offset_right = 924.0
+offset_bottom = -591.0
+text = "Press E"
+
 [connection signal="body_entered" from="SuccessArea" to="." method="_on_success_area_body_entered"]
 
 [editable path="NavigationRegion2D/Level1 Walls"]

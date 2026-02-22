@@ -173,6 +173,13 @@ action_name = "get the eggs"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="QteEggArea/InteractionArea" unique_id=640699677]
 shape = SubResource("CircleShape2D_wqpen")
 
+[node name="Label" type="Label" parent="QteEggArea" unique_id=1990879406]
+offset_left = -50.099846
+offset_top = -19.487661
+offset_right = 53.900154
+offset_bottom = 23.512339
+text = "Press E"
+
 [node name="SuccessArea" type="Area2D" parent="." unique_id=1706891573]
 position = Vector2(847, 601)
 
