@@ -60,9 +60,7 @@ func resume_game():
 
 func play_game():
 	comics.setup([
-		preload("res://art/IntroComicDEMO.png"),
-		preload("res://art/IntroComicDEMO.png"),
-		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/IntroComicFINAL.png"),
 	], func():
 		gs.current_level = 1
 		comics.visible = false
@@ -75,9 +73,7 @@ func show_level_success():
 	_active_scene.process_mode = Node.PROCESS_MODE_DISABLED
 
 	comics.setup([
-		preload("res://art/IntroComicDEMO.png"),
-		preload("res://art/IntroComicDEMO.png"),
-		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/VictoryScreenFINAL.png"),
 	], func():
 		gs.current_level = 2
 		comics.visible = false
@@ -90,9 +86,7 @@ func win_game():
 	_active_scene.process_mode = Node.PROCESS_MODE_DISABLED
 
 	comics.setup([
-		preload("res://art/IntroComicDEMO.png"),
-		preload("res://art/IntroComicDEMO.png"),
-		preload("res://art/IntroComicDEMO.png"),
+		preload("res://art/VictoryScreenFINAL.png"),
 	], func():
 		gs.current_level = 0
 		comics.visible = false
