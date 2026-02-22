@@ -12,17 +12,17 @@ enum Type { CHICKEN, ROOSTER }
 @export var lose_range := 320.0
 @export var path: Path2D
 @export var patrol_arrive_dist := 12.0
+@export var detection_grace_period: float = 0.5
 
 @onready var agent: NavigationAgent2D = %agent
 @onready var main_character_sprite: AnimatedSprite2D
 @onready var rooster_sprite: AnimatedSprite2D = %roosterSprite
 @onready var chicken_sprite: AnimatedSprite2D = %chickenSprite
 
-@onready var always_player: Player = $"../../../Player"
-
 var state := PATROL
 var patrol_points: PackedVector2Array
 var patrol_index := 0
+var detection_timer: SceneTreeTimer
 
 @onready var player: Player = null
 
@@ -143,9 +143,15 @@ func _closest_point_on_segment(p: Vector2, a: Vector2, b: Vector2) -> Vector2:
 
 func _on_vision_cone_area_body_entered(body: Node2D) -> void:
 	if body is Player:
-		player = body
+		detection_timer = get_tree().create_timer(detection_grace_period)
+		detection_timer.timeout.connect(_detect_player.bind(body))
 
+func _detect_player(body: Player):
+	if detection_timer == null:
+		return
+	player = body
 
 func _on_vision_cone_area_body_exited(body: Node2D) -> void:
+	detection_timer = null
 	if body is Player:
 		player = null
