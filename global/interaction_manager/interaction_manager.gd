@@ -20,5 +20,3 @@ func _input(event: InputEvent) -> void:
 
 			await active_area.interact.call();
 			can_interact = true;
-			
-			
